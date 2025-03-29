@@ -16,3 +16,19 @@
     }
   }
 }
+
+@theme {
+  --color-midnight: #121063;
+  --color-tahiti: #3ab7bf;
+  --color-bermuda: #78dcca;
+  --color-olive-50: #f8faf0;
+  --color-olive-100: #eef4d9;
+  --color-olive-200: #ddeab3;
+  --color-olive-300: #c5da85;
+  --color-olive-400: #a9c35a;
+  --color-olive-500: #8ca83d; /*Base olive*/
+  --color-olive-600: #6b852d;
+  --color-olive-700: #526625;
+  --color-olive-800: #3f4d20;
+  --color-olive-900: #2d361a; /*Dark olive*/
+}
