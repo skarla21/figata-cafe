@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import SectionWrapper from "@/components/SectionWrapper";
 import Image from "next/image";
@@ -39,6 +40,7 @@ export default function Home() {
               src="/figata_1.jpg"
               alt={"Picture of Figata"}
               fill={true}
+              sizes="(max-width: 1143px) 100vw, (max-width: 1143px) 50vw, 33vw"
             ></Image>
           </div>
         </div>
@@ -74,6 +76,8 @@ export default function Home() {
           </div>
         </div>
       </SectionWrapper>
+
+      <Footer />
     </main>
   );
 }
