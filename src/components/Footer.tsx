@@ -1,15 +1,27 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { FiArrowUp } from "react-icons/fi";
 
 export default function Footer() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   };
+
+  useEffect(() => {
+    const checkScroll = () => {
+      setIsScrolled(window.scrollY > 100); // Adjust 100 to your preferred threshold
+    };
+
+    window.addEventListener("scroll", checkScroll);
+    return () => window.removeEventListener("scroll", checkScroll);
+  }, []);
 
   return (
     <footer className="bg-olive-100 text-olive-700 mt-20 py-8 px-4 sm:px-6 lg:px-8">
@@ -19,8 +31,9 @@ export default function Footer() {
           <div className="flex flex-col items-center">
             <div className="relative w-24 h-24 mb-2">
               <Image
-                src="/figata_2.jpg"
+                src="/assets/imgs/logo.jpg"
                 alt="Figata Café Logo"
+                sizes="(max-width: 1440px) 100vw, (max-width: 1440px) 50vw, 33vw"
                 fill
                 className="rounded-full object-cover"
               />
@@ -57,7 +70,11 @@ export default function Footer() {
         </div>
 
         {/* Mobile Scroll Button */}
-        <div className="md:hidden fixed bottom-4 right-4">
+        <div
+          className={`md:hidden fixed bottom-4 right-4 transition-opacity duration-300 ${
+            isScrolled ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
+        >
           <motion.button
             onClick={scrollToTop}
             whileHover={{ scale: 1.1 }}
