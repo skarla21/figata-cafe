@@ -62,7 +62,7 @@ export default function Footer() {
             onClick={scrollToTop}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-olive-700 text-olive-100 shadow-lg hover:shadow-xl transition-shadow"
+            className="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-olive-700 text-olive-100 shadow-lg hover:shadow-xl cursor-pointer transition-shadow"
             aria-label="Scroll to top"
           >
             <FiArrowUp className="w-6 h-6" />
@@ -79,7 +79,7 @@ export default function Footer() {
             onClick={scrollToTop}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center justify-center w-12 h-12 rounded-full bg-olive-700 text-olive-100 shadow-lg hover:shadow-xl transition-shadow"
+            className="flex items-center justify-center w-12 h-12 rounded-full bg-olive-700 text-olive-100 shadow-lg hover:shadow-xl cursor-pointer transition-shadow"
             aria-label="Scroll to top"
           >
             <FiArrowUp className="w-6 h-6" />
