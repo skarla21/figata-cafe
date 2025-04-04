@@ -3,7 +3,6 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Figata Café",
-  description: "Website of Figata Café",
   metadataBase: new URL("https://figata-cafe.vercel.app"), //change this
   icons: {
     icon: [
@@ -13,7 +12,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     title: "Figata Café",
-    description: "Website of Figata Café",
     siteName: "Figata Café",
     images: [
       {

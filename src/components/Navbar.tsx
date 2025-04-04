@@ -12,12 +12,16 @@ const navLinks = [
   { name: "Find Us", target: "findus" },
 ];
 
+// Named handler functions
+const handleSetActive = (
+  to: string,
+  setActive: React.Dispatch<React.SetStateAction<string>>
+) => {
+  setActive(to);
+};
+
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("hero");
-
-  const handleSetActive = (to: string) => {
-    setActiveSection(to);
-  };
 
   return (
     <nav>
@@ -33,7 +37,7 @@ export default function Navbar() {
               smooth={true}
               offset={-70}
               duration={500}
-              onSetActive={handleSetActive}
+              onSetActive={() => handleSetActive("hero", setActiveSection)}
               className="hover:bg-olive-100 cursor-pointer p-1 rounded-full transition-colors"
             >
               <Image
@@ -61,7 +65,9 @@ export default function Navbar() {
                   smooth={true}
                   offset={-70}
                   duration={500}
-                  onSetActive={handleSetActive}
+                  onSetActive={() =>
+                    handleSetActive(link.target, setActiveSection)
+                  }
                   className={`group cursor-pointer text-lg font-medium relative transition-colors ${
                     activeSection === link.target
                       ? "text-figata-cup"
@@ -100,7 +106,7 @@ export default function Navbar() {
               smooth={true}
               offset={-70}
               duration={500}
-              onSetActive={handleSetActive}
+              onSetActive={() => handleSetActive("hero", setActiveSection)}
             >
               <Image
                 src="/assets/imgs/icon.ico"
@@ -132,7 +138,9 @@ export default function Navbar() {
                 smooth={true}
                 offset={-70}
                 duration={500}
-                onSetActive={handleSetActive}
+                onSetActive={() =>
+                  handleSetActive(link.target, setActiveSection)
+                }
                 className={`relative cursor-pointer px-2 py-1 text-sm font-medium transition-colors ${
                   activeSection === link.target
                     ? "text-figata-cup"

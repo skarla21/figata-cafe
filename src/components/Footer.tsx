@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { FiArrowUp } from "react-icons/fi";
 
 export default function Footer() {
@@ -14,14 +14,15 @@ export default function Footer() {
     });
   };
 
-  useEffect(() => {
-    const checkScroll = () => {
-      setIsScrolled(window.scrollY > 100); // Adjust 100 to your preferred threshold
-    };
+  // Named scroll handler
+  const checkScroll = useCallback(() => {
+    setIsScrolled(window.scrollY > 100);
+  }, []);
 
+  useEffect(() => {
     window.addEventListener("scroll", checkScroll);
     return () => window.removeEventListener("scroll", checkScroll);
-  }, []);
+  }, [checkScroll]);
 
   return (
     <footer className="bg-olive-100 text-figata-cup mt-20 py-8 px-4 sm:px-6 lg:px-8">
