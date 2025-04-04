@@ -24,7 +24,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-olive-100 text-olive-700 mt-20 py-8 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-olive-100 text-figata-cup mt-20 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo and Tagline */}
@@ -44,7 +44,7 @@ export default function Footer() {
           {/* Copyright Text */}
           <div className="text-center md:order-none">
             <p className="text-sm">
-              Copyright © 2024 Figata Café
+              Copyright © 2025 Figata Café
               <br />
               Designed by{" "}
               <a
@@ -62,7 +62,7 @@ export default function Footer() {
             onClick={scrollToTop}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-olive-700 text-olive-100 shadow-lg hover:shadow-xl cursor-pointer transition-shadow"
+            className="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-figata-cup text-olive-100 shadow-lg hover:shadow-xl cursor-pointer transition-shadow"
             aria-label="Scroll to top"
           >
             <FiArrowUp className="w-6 h-6" />
@@ -79,7 +79,7 @@ export default function Footer() {
             onClick={scrollToTop}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center justify-center w-12 h-12 rounded-full bg-olive-700 text-olive-100 shadow-lg hover:shadow-xl cursor-pointer transition-shadow"
+            className="flex items-center justify-center w-12 h-12 rounded-full bg-figata-cup text-olive-100 shadow-lg hover:shadow-xl cursor-pointer transition-shadow"
             aria-label="Scroll to top"
           >
             <FiArrowUp className="w-6 h-6" />

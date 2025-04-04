@@ -8,7 +8,7 @@ const navLinks = [
   { name: "Figata", target: "hero" },
   { name: "About", target: "about" },
   { name: "Gallery", target: "gallery" },
-  { name: "Contact", target: "contact" },
+  { name: "Find Us", target: "findus" },
 ];
 
 export default function Navbar() {
@@ -50,16 +50,16 @@ export default function Navbar() {
                   onSetActive={handleSetActive}
                   className={`group cursor-pointer text-lg font-medium relative transition-colors ${
                     activeSection === link.target
-                      ? "text-olive-700"
-                      : "text-gray-700 hover:text-olive-500"
+                      ? "text-figata-cup"
+                      : "text-gray-700 hover:text-olive-600"
                   }`}
                 >
                   {link.name}
                   <span
                     className={`absolute -bottom-1 left-0 h-0.5 transition-all ${
                       activeSection === link.target
-                        ? "w-full bg-olive-700"
-                        : "w-0 bg-olive-500 group-hover:w-full"
+                        ? "w-full bg-figata-cup"
+                        : "w-0 bg-olive-600 group-hover:w-full"
                     }`}
                   ></span>
                 </Link>

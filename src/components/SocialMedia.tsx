@@ -5,10 +5,10 @@ export default function SocialMedia() {
         href="https://www.instagram.com/figata_cafe/"
         target="_blank"
         rel="noopener noreferrer"
-        className="p-2 rounded-full hover:bg-olive-100 transition-colors"
+        className="group p-2 rounded-full hover:bg-olive-100 transition-colors"
       >
         <svg
-          className="w-6 h-6 text-gray-700 hover:text-olive-700"
+          className="w-6 h-6 text-gray-700 group-hover:text-figata-cup"
           fill="currentColor"
           viewBox="0 0 24 24"
           aria-hidden="true"
@@ -29,10 +29,10 @@ export default function SocialMedia() {
         href="https://www.facebook.com/FigataDriedFigs"
         target="_blank"
         rel="noopener noreferrer"
-        className="p-2 rounded-full hover:bg-olive-100 transition-colors"
+        className="group p-2 rounded-full hover:bg-olive-100 transition-colors"
       >
         <svg
-          className="w-6 h-6 text-gray-700 hover:text-olive-700"
+          className="w-6 h-6 text-gray-700 group-hover:text-figata-cup"
           fill="currentColor"
           viewBox="0 0 24 24"
           aria-hidden="true"
@@ -46,10 +46,10 @@ export default function SocialMedia() {
         href="https://www.threads.net/@figata_cafe"
         target="_blank"
         rel="noopener noreferrer"
-        className="p-2 rounded-full hover:bg-olive-100 transition-colors"
+        className="group p-2 rounded-full hover:bg-olive-100 transition-colors"
       >
         <svg
-          className="w-6 h-6 text-gray-700 hover:text-olive-700"
+          className="w-6 h-6 text-gray-700 group-hover:text-figata-cup"
           fill="currentColor"
           viewBox="0 0 192 192"
           aria-hidden="true"

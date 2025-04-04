@@ -23,7 +23,7 @@ export default function Home() {
         <Gallery />
       </SectionWrapper>
 
-      <SectionWrapper id="contact">
+      <SectionWrapper id="findus">
         <Contact />
       </SectionWrapper>
 

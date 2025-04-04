@@ -1,41 +1,51 @@
+import { CiMail, CiMapPin } from "react-icons/ci";
+import { FaPhone } from "react-icons/fa";
 import Iframe from "react-iframe";
 
 export default function Contact() {
   return (
     <div className="max-2-xl xl:max-w-4xl mx-auto space-y-8">
-      <h2 className="text-4xl font-bold text-olive-700 text-center">Find Us</h2>
+      <h2 className="text-4xl font-bold text-figata-cup text-center">
+        Find Us
+      </h2>
       <div className="grid md:grid-cols-2 gap-8">
         {/* first col about contact and hours */}
         <div className="ml-2 space-y-4">
           <h3 className="text-xl font-semibold">Contact Info</h3>
-          <p>
-            📌{" "}
-            <a
-              href="https://maps.app.goo.gl/bt8ssrzkD9kT16Sp8"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              className="text-olive-700 hover:underline"
-            >
-              Agias Sofias 128, Vironas 16232
-            </a>
+          <p className="flex items-center space-x-2">
+            <CiMapPin />
+            <span className="mr-2">
+              <a
+                href="https://maps.app.goo.gl/bt8ssrzkD9kT16Sp8"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                className="text-figata-cup hover:underline"
+              >
+                Agias Sofias 128, Vironas 16232
+              </a>
+            </span>
           </p>
-          <p>
-            📞{" "}
-            <a
-              href="tel:+302112175717"
-              className="text-olive-700 hover:underline"
-            >
-              +30 21 1217 5717
-            </a>
+          <p className="flex items-center space-x-2">
+            <FaPhone />
+            <span>
+              <a
+                href="tel:+302112175717"
+                className="text-figata-cup hover:underline"
+              >
+                +30 21 1217 5717
+              </a>
+            </span>
           </p>
-          <p>
-            ✉️{" "}
-            <a
-              href="mailto:contact@figata.com"
-              className="text-olive-700 hover:underline"
-            >
-              contact@figata.com
-            </a>
+          <p className="flex items-center space-x-2">
+            <CiMail />
+            <span>
+              <a
+                href="mailto:contact@figata.com"
+                className="text-figata-cup hover:underline"
+              >
+                contact@figata.com
+              </a>
+            </span>
           </p>
           <h3 className="text-xl font-semibold mt-9">Hours</h3>
           <div className="space-y-2 text-gray-600">
