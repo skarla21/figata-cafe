@@ -7,6 +7,7 @@ import SocialMedia from "./SocialMedia";
 const navLinks = [
   { name: "Figata", target: "hero" },
   { name: "About", target: "about" },
+  { name: "Products", target: "products" },
   { name: "Gallery", target: "gallery" },
   { name: "Find Us", target: "findus" },
 ];

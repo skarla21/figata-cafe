@@ -52,7 +52,7 @@ export default function Contact() {
                 href="mailto:contact@figata.com"
                 className="text-figata-cup hover:underline"
               >
-                contact@figata.com
+                {process.env.NEXT_PUBLIC_FIGATA_EMAIL}
               </a>
             </span>
           </p>

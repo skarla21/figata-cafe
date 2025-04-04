@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import SectionWrapper from "@/components/SectionWrapper";
 import Hero from "@/components/mainPageSections/Hero";
 import About from "@/components/mainPageSections/About";
+import Products from "@/components/mainPageSections/Products";
 import Gallery from "@/components/mainPageSections/Gallery";
 import Contact from "@/components/mainPageSections/Contact";
 
@@ -17,6 +18,10 @@ export default function Home() {
 
       <SectionWrapper id="about">
         <About />
+      </SectionWrapper>
+
+      <SectionWrapper id="products">
+        <Products />
       </SectionWrapper>
 
       <SectionWrapper id="gallery">
