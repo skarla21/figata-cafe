@@ -106,13 +106,15 @@ export default function Navbar() {
                 offset={-70}
                 duration={500}
                 onSetActive={handleSetActive}
-                className={`relative cursor-pointer px-2 py-1 text-sm font-medium text-gray-700 transition-colors ${
-                  activeSection === link.target ? "text-olive-700" : ""
+                className={`relative cursor-pointer px-2 py-1 text-sm font-medium transition-colors ${
+                  activeSection === link.target
+                    ? "text-figata-cup"
+                    : "text-gray-700"
                 }`}
               >
                 {link.name}
                 <span
-                  className={`absolute -bottom-1 left-0 h-0.5 transition-all bg-olive-700 ${
+                  className={`absolute -bottom-1 left-0 h-0.5 transition-all bg-figata-cup ${
                     activeSection === link.target ? "w-full " : "w-0"
                   }`}
                 ></span>

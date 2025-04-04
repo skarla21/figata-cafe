@@ -1,6 +1,7 @@
 import { CiMail, CiMapPin } from "react-icons/ci";
 import { FaPhone } from "react-icons/fa";
 import Iframe from "react-iframe";
+import ContactForm from "./ContactForm";
 
 export default function Contact() {
   return (
@@ -9,8 +10,16 @@ export default function Contact() {
         Find Us
       </h2>
       <div className="grid md:grid-cols-2 gap-8">
+        {/* second col about google maps embed */}
+        <div className="h-96 bg-gray-100 rounded-xl overflow-hidden w-full md:order-2">
+          <Iframe
+            className="w-full h-full border-0"
+            loading="lazy"
+            url={`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJsxVeB4q9oRQRzBN8DtslF3A&key=${process.env.MAPS_API_KEY}&zoom=15`}
+          ></Iframe>
+        </div>
         {/* first col about contact and hours */}
-        <div className="ml-2 space-y-4">
+        <div className="ml-2 space-y-4 md:order-1">
           <h3 className="text-xl font-semibold">Contact Info</h3>
           <p className="flex items-center space-x-2">
             <CiMapPin />
@@ -67,15 +76,9 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        {/* google maps embed */}
-        <div className="h-96 bg-gray-100 rounded-xl overflow-hidden w-full">
-          <Iframe
-            className="w-full h-full border-0"
-            loading="lazy"
-            url={`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJsxVeB4q9oRQRzBN8DtslF3A&key=${process.env.MAPS_API_KEY}&zoom=15`}
-          ></Iframe>
-        </div>
       </div>
+
+      <ContactForm />
     </div>
   );
 }
