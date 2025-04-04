@@ -35,7 +35,7 @@ export default function ContactForm() {
     setErrors(null);
     try {
       const res = await fetch(
-        `https://formsubmit.co/ajax/${process.env.FIGATA_EMAIL}`,
+        `https://formsubmit.co/ajax/${process.env.NEXT_PUBLIC_FIGATA_EMAIL}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
