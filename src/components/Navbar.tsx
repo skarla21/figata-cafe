@@ -26,15 +26,28 @@ export default function Navbar() {
         <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between relative">
           {/* Logo */}
           <div className="flex-1 flex justify-start w-[60px]">
-            <Image
-              src="/assets/imgs/icon.ico"
-              alt="Figata Logo"
-              width={40}
-              height={40}
-              style={{ width: "auto", height: "auto" }}
-              className="rounded-full"
-              priority
-            />
+            <Link
+              key={"hero"}
+              to={"hero"}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              onSetActive={handleSetActive}
+              className="hover:bg-olive-100 cursor-pointer p-1 rounded-full transition-colors"
+            >
+              <Image
+                src="/assets/imgs/icon.ico"
+                alt="Figata Logo"
+                width={40}
+                height={40}
+                style={{
+                  width: "auto",
+                  height: "auto",
+                }}
+                priority
+              />
+            </Link>
           </div>
 
           {/* Centered Navigation Links */}
@@ -79,16 +92,29 @@ export default function Navbar() {
       <div className="fixed block md:hidden top-0 w-full bg-white/80 backdrop-blur-md z-50 shadow-sm">
         {/* First Row - Logo & Socials */}
         <div className="px-4 sm:px-6 py-2.5 flex justify-between items-center border-b border-olive-100">
-          <div>
-            <Image
-              src="/assets/imgs/icon.ico"
-              alt="Figata Logo"
-              width={40}
-              height={40}
-              style={{ width: "auto", height: "auto" }}
-              className="rounded-full"
-              priority
-            />
+          <div className="flex-1 flex justify-start w-[60px]">
+            <Link
+              key={"hero"}
+              to={"hero"}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              onSetActive={handleSetActive}
+            >
+              <Image
+                src="/assets/imgs/icon.ico"
+                alt="Figata Logo"
+                width={40}
+                height={40}
+                style={{
+                  width: "auto",
+                  height: "auto",
+                }}
+                className="rounded-full"
+                priority
+              />
+            </Link>
           </div>
           <div className="flex flex-row">
             <SocialMedia />
