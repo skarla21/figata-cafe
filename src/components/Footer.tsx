@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState, useCallback } from "react";
 import { FiArrowUp } from "react-icons/fi";
-import { scrollToTop } from "@/utilities/scroll";
+import { scrollToTop } from "@/utilities";
 
 export default function Footer() {
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Name the scroll handler function
+  // name the scroll handler function
   const handleScroll = useCallback(function handleScroll() {
     setIsScrolled(window.scrollY > 100);
   }, []);

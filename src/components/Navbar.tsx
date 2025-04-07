@@ -1,9 +1,8 @@
 "use client";
 import { Link } from "react-scroll";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import SocialMedia from "./SocialMedia";
-import { scrollToTop } from "@/utilities/scroll";
 
 const navLinks = [
   { name: "Figata", target: "hero" },
@@ -20,10 +19,6 @@ export default function Navbar() {
     to: string,
     setActive: React.Dispatch<React.SetStateAction<string>>
   ) => setActive(to);
-
-  useEffect(() => {
-    scrollToTop("instant");
-  }, []);
 
   return (
     <nav>
