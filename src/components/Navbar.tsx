@@ -43,8 +43,8 @@ export default function Navbar() {
                 width={40}
                 height={40}
                 style={{
-                  width: "auto",
-                  height: "auto",
+                  width: "40px",
+                  height: "40px",
                 }}
                 priority
               />
@@ -111,8 +111,8 @@ export default function Navbar() {
                 width={40}
                 height={40}
                 style={{
-                  width: "auto",
-                  height: "auto",
+                  width: "40px",
+                  height: "40px",
                 }}
                 className="rounded-full"
                 priority

@@ -14,15 +14,27 @@ export default function Footer() {
     });
   };
 
-  // Named scroll handler
   const checkScroll = useCallback(() => {
     setIsScrolled(window.scrollY > 100);
   }, []);
 
-  useEffect(() => {
+  const addScrollListener = useCallback(() => {
     window.addEventListener("scroll", checkScroll);
-    return () => window.removeEventListener("scroll", checkScroll);
   }, [checkScroll]);
+
+  const removeScrollListener = useCallback(() => {
+    window.removeEventListener("scroll", checkScroll);
+  }, [checkScroll]);
+
+  useEffect(() => {
+    // Add the event listener on mount
+    addScrollListener();
+
+    // Remove the event listener on cleanup
+    return () => {
+      removeScrollListener();
+    };
+  }, [checkScroll, addScrollListener, removeScrollListener]);
 
   return (
     <footer className="bg-olive-100 text-figata-cup mt-20 py-8 px-4 sm:px-6 lg:px-8">
