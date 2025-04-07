@@ -12,16 +12,13 @@ const navLinks = [
   { name: "Find Us", target: "findus" },
 ];
 
-// Named handler functions
-const handleSetActive = (
-  to: string,
-  setActive: React.Dispatch<React.SetStateAction<string>>
-) => {
-  setActive(to);
-};
-
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("hero");
+
+  const onSetActiveHandler = (
+    to: string,
+    setActive: React.Dispatch<React.SetStateAction<string>>
+  ) => setActive(to);
 
   return (
     <nav>
@@ -37,8 +34,8 @@ export default function Navbar() {
               smooth={true}
               offset={-70}
               duration={500}
-              onSetActive={() => handleSetActive("hero", setActiveSection)}
-              className="hover:bg-olive-100 cursor-pointer p-1 rounded-full transition-colors"
+              onSetActive={() => onSetActiveHandler("hero", setActiveSection)}
+              className="group hover:bg-olive-100 cursor-pointer p-1 rounded-full transition-colors"
             >
               <Image
                 src="/assets/imgs/icon.ico"
@@ -66,7 +63,7 @@ export default function Navbar() {
                   offset={-70}
                   duration={500}
                   onSetActive={() =>
-                    handleSetActive(link.target, setActiveSection)
+                    onSetActiveHandler(link.target, setActiveSection)
                   }
                   className={`group cursor-pointer text-lg font-medium relative transition-colors ${
                     activeSection === link.target
@@ -106,7 +103,7 @@ export default function Navbar() {
               smooth={true}
               offset={-70}
               duration={500}
-              onSetActive={() => handleSetActive("hero", setActiveSection)}
+              onSetActive={() => onSetActiveHandler("hero", setActiveSection)}
             >
               <Image
                 src="/assets/imgs/icon.ico"
@@ -139,7 +136,7 @@ export default function Navbar() {
                 offset={-70}
                 duration={500}
                 onSetActive={() =>
-                  handleSetActive(link.target, setActiveSection)
+                  onSetActiveHandler(link.target, setActiveSection)
                 }
                 className={`relative cursor-pointer px-2 py-1 text-sm font-medium transition-colors ${
                   activeSection === link.target

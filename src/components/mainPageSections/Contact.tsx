@@ -1,5 +1,4 @@
-import { CiMail, CiMapPin } from "react-icons/ci";
-import { FaPhone } from "react-icons/fa";
+import { CiMail, CiMapPin, CiPhone } from "react-icons/ci";
 import Iframe from "react-iframe";
 import ContactForm from "./ContactForm";
 
@@ -35,7 +34,7 @@ export default function Contact() {
             </span>
           </p>
           <p className="flex items-center space-x-2">
-            <FaPhone />
+            <CiPhone />
             <span>
               <a
                 href="tel:+302112175717"
