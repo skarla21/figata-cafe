@@ -3,38 +3,20 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState, useCallback } from "react";
 import { FiArrowUp } from "react-icons/fi";
+import { scrollToTop } from "@/utilities/scroll";
 
 export default function Footer() {
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
-  const checkScroll = useCallback(() => {
+  // Name the scroll handler function
+  const handleScroll = useCallback(function handleScroll() {
     setIsScrolled(window.scrollY > 100);
   }, []);
 
-  const addScrollListener = useCallback(() => {
-    window.addEventListener("scroll", checkScroll);
-  }, [checkScroll]);
-
-  const removeScrollListener = useCallback(() => {
-    window.removeEventListener("scroll", checkScroll);
-  }, [checkScroll]);
-
   useEffect(() => {
-    // Add the event listener on mount
-    addScrollListener();
-
-    // Remove the event listener on cleanup
-    return () => {
-      removeScrollListener();
-    };
-  }, [checkScroll, addScrollListener, removeScrollListener]);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
 
   return (
     <footer className="bg-olive-100 text-figata-cup mt-20 py-8 px-4 sm:px-6 lg:px-8">
@@ -72,7 +54,7 @@ export default function Footer() {
 
           {/* Scroll to Top Button */}
           <motion.button
-            onClick={scrollToTop}
+            onClick={() => scrollToTop("smooth")}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             className="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-figata-cup text-olive-100 shadow-lg hover:shadow-xl cursor-pointer transition-shadow"
@@ -89,7 +71,7 @@ export default function Footer() {
           }`}
         >
           <motion.button
-            onClick={scrollToTop}
+            onClick={() => scrollToTop("smooth")}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             className="flex items-center justify-center w-12 h-12 rounded-full bg-figata-cup text-olive-100 shadow-lg hover:shadow-xl cursor-pointer transition-shadow"
