@@ -7,7 +7,7 @@ import Products from "@/components/mainPageSections/Products";
 import Gallery from "@/components/mainPageSections/Gallery";
 import Contact from "@/components/mainPageSections/Contact";
 
-export default function Home() {
+export default async function Home() {
   return (
     <main className="relative">
       <Navbar />

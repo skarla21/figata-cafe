@@ -1,0 +1,15 @@
+{
+  "hero": {
+    "description": "μπλα μπλα"
+  },
+  "navbar": {
+    "figata": "Figata",
+    "about": "Ποιοί είμαστε",
+    "products": "Προϊόντα",
+    "gallery": "Φώτο",
+    "findus": "Βρείτε μας"
+  },
+  "about": {
+    "title": "Η ιστορία μας"
+  }
+}

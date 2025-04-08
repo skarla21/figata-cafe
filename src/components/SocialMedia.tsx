@@ -2,7 +2,7 @@ import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
 
 export default function SocialMedia() {
   return (
-    <>
+    <div className="flex-1 flex justify-end">
       <a
         href="https://www.instagram.com/figata_cafe/"
         target="_blank"
@@ -29,6 +29,6 @@ export default function SocialMedia() {
       >
         <FaTiktok className="w-6 h-6 text-gray-700 group-hover:text-figata-cup" />
       </a>
-    </>
+    </div>
   );
 }
