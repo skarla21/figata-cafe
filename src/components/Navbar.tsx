@@ -9,14 +9,14 @@ import LocaleSwitch from "./LocaleSwitch";
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("hero");
 
-  const t = useTranslations("navbar");
+  const navbarText = useTranslations("navbar");
 
   const navLinks = [
-    { name: t("figata"), target: "hero" },
-    { name: t("about"), target: "about" },
-    { name: t("products"), target: "products" },
-    { name: t("gallery"), target: "gallery" },
-    { name: t("findus"), target: "findus" },
+    { name: navbarText("figata"), target: "hero" },
+    { name: navbarText("about"), target: "about" },
+    { name: navbarText("products"), target: "products" },
+    { name: navbarText("gallery"), target: "gallery" },
+    { name: navbarText("findus"), target: "findus" },
   ];
 
   const onSetActiveHandler = (to: string) => setActiveSection(to);

@@ -1,4 +1,6 @@
 "use client";
+import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 import { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { toast, ToastContainer } from "react-toastify";
@@ -21,6 +23,11 @@ export default function ContactForm() {
   const [succeeded, setSucceeded] = useState<boolean>(false);
   const [errors, setErrors] = useState<string | null>(null);
 
+  const contactFormText = useTranslations("contact-form");
+
+  const pathname = usePathname();
+  const currentLocale = pathname.split("/")[1];
+
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ): void => {
@@ -30,7 +37,16 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
-    if (!recaptchaValue) return;
+    if (
+      !recaptchaValue ||
+      submitting ||
+      formData.name === "" ||
+      formData.email === "" ||
+      formData.message === ""
+    ) {
+      return;
+    }
+
     setSubmitting(true);
     setErrors(null);
     try {
@@ -48,7 +64,7 @@ export default function ContactForm() {
         setFormData({ name: "", email: "", message: "" });
         setRecaptchaValue(null);
       } else {
-        setErrors(data.message || "Something went wrong.");
+        setErrors(data.message || contactFormText("message-error"));
       }
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
@@ -61,11 +77,11 @@ export default function ContactForm() {
   // Toast messages
   useEffect(() => {
     if (succeeded) {
-      toast.success("Message sent successfully! We'll respond shortly.", {
+      toast.success(contactFormText("message-success"), {
         onClose: () => setSucceeded(false),
       });
     }
-  }, [succeeded]);
+  }, [contactFormText, succeeded]);
 
   useEffect(() => {
     if (errors) {
@@ -79,7 +95,7 @@ export default function ContactForm() {
     <section className="max-w-2xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
       <div className="bg-white p-6 sm:p-8">
         <h3 className="text-2xl font-bold text-figata-cup mb-8 text-center">
-          Send Us a Message
+          {contactFormText("message-title")}
         </h3>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
@@ -87,7 +103,7 @@ export default function ContactForm() {
               htmlFor="name"
               className="block text-sm font-medium text-gray-700 mb-2"
             >
-              Your Name
+              {contactFormText("message-name")}
             </label>
             <input
               id="name"
@@ -105,7 +121,7 @@ export default function ContactForm() {
               htmlFor="email"
               className="block text-sm font-medium text-gray-700 mb-2"
             >
-              Email Address
+              {contactFormText("message-mail")}
             </label>
             <input
               id="email"
@@ -123,7 +139,7 @@ export default function ContactForm() {
               htmlFor="message"
               className="block text-sm font-medium text-gray-700 mb-2"
             >
-              Message
+              {contactFormText("message-text")}
             </label>
             <textarea
               id="message"
@@ -140,19 +156,32 @@ export default function ContactForm() {
             <ReCAPTCHA
               sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string}
               onChange={(value: string | null) => setRecaptchaValue(value)}
+              hl={currentLocale}
             />
           </div>
 
           <button
             type="submit"
-            disabled={!recaptchaValue || submitting}
-            className={`w-full py-3 px-6 text-center rounded-lg font-medium transition-colors ${
-              recaptchaValue && !submitting
-                ? "bg-figata-cup text-white hover:bg-olive-700"
-                : "bg-gray-200 text-gray-500 cursor-not-allowed"
+            disabled={
+              !recaptchaValue ||
+              submitting ||
+              formData.name === "" ||
+              formData.email === "" ||
+              formData.message === ""
+            }
+            className={`w-full py-3 px-6 text-center rounded-lg font-medium transition-colors  ${
+              recaptchaValue &&
+              !submitting &&
+              formData.name !== "" &&
+              formData.name !== "" &&
+              formData.name !== ""
+                ? "bg-figata-cup text-white hover:bg-olive-700 cursor-pointer"
+                : "bg-gray-200 text-gray-500"
             }`}
           >
-            {submitting ? "Sending..." : "Send Message"}
+            {submitting
+              ? contactFormText("message-sending")
+              : contactFormText("message-send")}
           </button>
 
           <ToastContainer

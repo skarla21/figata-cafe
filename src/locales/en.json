@@ -11,5 +11,37 @@
   },
   "about": {
     "title": "Our Story"
+  },
+  "products": {
+    "title": "Our Products",
+    "description": "Discover our curated selection of products that blend quality with style. Each item is designed to elevate your everyday experience. (Placeholder text)"
+  },
+  "gallery": {
+    "title": "Gallery"
+  },
+  "contact": {
+    "title": "Find Us",
+    "contact-title": "Contact Info",
+    "address": "Agias Sofias 128, Vironas 16232",
+    "hours-title": "Hours",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "am": "am",
+    "pm": "pm"
+  },
+  "contact-form": {
+    "message-title": "Send Us a Message",
+    "message-name": "Your Name",
+    "message-mail": "Email Address",
+    "message-text": "Message",
+    "message-sending": "Sending...",
+    "message-send": "Send Message",
+    "message-success": "Message sent successfully! We'll respond shortly.",
+    "message-error": "Something went wrong."
   }
 }

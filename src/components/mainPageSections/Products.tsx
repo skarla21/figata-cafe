@@ -1,15 +1,18 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 export default function Products() {
+  const productsText = useTranslations("products");
+
   return (
     <div className="grid md:grid-cols-2 gap-12 items-center py-12">
       {/* Left side: Section Title and Description */}
       <div className="space-y-6 md:order-2">
-        <h2 className="text-4xl font-bold text-figata-cup">Our Products</h2>
+        <h2 className="text-4xl font-bold text-figata-cup">
+          {productsText("title")}
+        </h2>
         <p className="text-gray-600 text-lg leading-relaxed">
-          Discover our curated selection of products that blend quality with
-          style. Each item is designed to elevate your everyday experience.
-          (Placeholder text)
+          {productsText("description")}
         </p>
       </div>
 

@@ -1,12 +1,15 @@
 import { CiMail, CiMapPin, CiPhone } from "react-icons/ci";
 import Iframe from "react-iframe";
 import ContactForm from "./ContactForm";
+import { useTranslations } from "next-intl";
 
 export default function Contact() {
+  const contactText = useTranslations("contact");
+
   return (
     <div className="max-2-xl xl:max-w-4xl mx-auto space-y-8">
       <h2 className="text-4xl font-bold text-figata-cup text-center">
-        Find Us
+        {contactText("title")}
       </h2>
       <div className="grid md:grid-cols-2 gap-8">
         {/* second col about google maps embed */}
@@ -19,7 +22,9 @@ export default function Contact() {
         </div>
         {/* first col about contact and hours */}
         <div className="ml-2 space-y-4 md:order-1">
-          <h3 className="text-xl font-semibold">Contact Info</h3>
+          <h3 className="text-xl font-semibold">
+            {contactText("contact-title")}
+          </h3>
           <p className="flex items-center space-x-2">
             <CiMapPin />
             <span className="mr-2">
@@ -29,7 +34,7 @@ export default function Contact() {
                 rel="noopener noreferrer nofollow"
                 className="text-figata-cup hover:underline"
               >
-                Agias Sofias 128, Vironas 16232
+                {contactText("address")}
               </a>
             </span>
           </p>
@@ -55,23 +60,39 @@ export default function Contact() {
               </a>
             </span>
           </p>
-          <h3 className="text-xl font-semibold mt-9">Hours</h3>
+          <h3 className="text-xl font-semibold mt-9">
+            {contactText("hours-title")}
+          </h3>
           <div className="space-y-2 text-gray-600">
             <div className="grid grid-cols-[max-content_1fr] gap-x-4">
-              <span>Monday</span>
-              <span>7:00 am - 7:00 pm</span>
-              <span>Tuesday</span>
-              <span>7:00 am - 3:00 pm</span>
-              <span>Wednesday</span>
-              <span>7:00 am - 7:00 pm</span>
-              <span>Thursday</span>
-              <span>7:00 am - 7:00 pm</span>
-              <span>Friday</span>
-              <span>7:00 am - 7:00 pm</span>
-              <span>Saturday</span>
-              <span>8:00 am - 3:00 pm</span>
-              <span>Sunday</span>
-              <span>9:00 am - 3:00 pm</span>
+              <span>{contactText("monday")}</span>
+              <span>
+                7:00 {contactText("am")} - 7:00 {contactText("pm")}
+              </span>
+              <span>{contactText("tuesday")}</span>
+              <span>
+                7:00 {contactText("am")} - 3:00 {contactText("pm")}
+              </span>
+              <span>{contactText("wednesday")}</span>
+              <span>
+                7:00 {contactText("am")} - 7:00 {contactText("pm")}
+              </span>
+              <span>{contactText("thursday")}</span>
+              <span>
+                7:00 {contactText("am")} - 7:00 {contactText("pm")}
+              </span>
+              <span>{contactText("friday")}</span>
+              <span>
+                7:00 {contactText("am")} - 7:00 {contactText("pm")}
+              </span>
+              <span>{contactText("saturday")}</span>
+              <span>
+                8:00 {contactText("am")} - 3:00 {contactText("pm")}
+              </span>
+              <span>{contactText("sunday")}</span>
+              <span>
+                9:00 {contactText("am")} - 3:00 {contactText("pm")}
+              </span>
             </div>
           </div>
         </div>

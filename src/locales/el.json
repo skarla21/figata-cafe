@@ -1,6 +1,6 @@
 {
   "hero": {
-    "description": "μπλα μπλα"
+    "description": "σύντομη περιγραφή"
   },
   "navbar": {
     "figata": "Figata",
@@ -11,5 +11,37 @@
   },
   "about": {
     "title": "Η ιστορία μας"
+  },
+  "products": {
+    "title": "Τα Προϊόντα μας",
+    "description": "Discover our curated selection of products that blend quality with style. Each item is designed to elevate your everyday experience. (Placeholder text)"
+  },
+  "gallery": {
+    "title": "Φωτογραφίες"
+  },
+  "contact": {
+    "title": "Βρείτε μας",
+    "contact-title": "Επικοινωνία",
+    "address": "Αγίας Σοφίας 128, Βύρωνας 16232",
+    "hours-title": "Ώρες λειτουργίας",
+    "monday": "Δευτέρα",
+    "tuesday": "Τρίτη",
+    "wednesday": "Τετάρτη",
+    "thursday": "Πέμπτη",
+    "friday": "Παρασκευή",
+    "saturday": "Σάββατο",
+    "sunday": "Κυριακή",
+    "am": "πμ",
+    "pm": "μμ"
+  },
+  "contact-form": {
+    "message-title": "Στείλτε μας ένα μήνυμα",
+    "message-name": "Όνομα",
+    "message-mail": "Διεύθυνση email",
+    "message-text": "Μήνυμα",
+    "message-sending": "Αποστολή...",
+    "message-send": "Αποστολή μηνύματος",
+    "message-success": "Το μήνυμα εστάλη. Θα επικοινωνήσουμε μαζί σας σύντομα.",
+    "message-error": "Κάτι πήγε λάθος."
   }
 }

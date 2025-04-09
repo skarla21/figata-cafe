@@ -2,12 +2,14 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 export default function About() {
-  const t = useTranslations("about");
+  const aboutText = useTranslations("about");
 
   return (
     <div className="grid md:grid-cols-2 gap-12 items-center">
       <div className="space-y-6">
-        <h2 className="text-4xl font-bold text-figata-cup">{t("title")}</h2>
+        <h2 className="text-4xl font-bold text-figata-cup">
+          {aboutText("title")}
+        </h2>
         <p className="text-gray-600 text-lg leading-relaxed">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
           aliquid, asperiores nemo repudiandae molestias sit, minima assumenda
