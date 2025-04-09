@@ -20,7 +20,7 @@ export default function LocaleSwitcher() {
   //helper to render a flag
   const renderFlag = (countryCode: string, alt: string) => (
     <Image
-      src={`https://hatscripts.github.io/circle-flags/flags/${countryCode}.svg`}
+      src={`/assets/imgs/${countryCode}.svg`}
       alt={alt}
       height="20"
       width="20"
