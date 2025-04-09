@@ -20,7 +20,7 @@ export default function LocaleSwitcher() {
   //helper to render a flag
   const renderFlag = (countryCode: string, alt: string) => (
     <Image
-      src={`/assets/imgs/${countryCode}.svg`}
+      src={`/assets/imgs/${countryCode}.png`}
       alt={alt}
       height="20"
       width="20"
@@ -31,7 +31,7 @@ export default function LocaleSwitcher() {
 
   return (
     <div className="relative">
-      <div className="flex justify-center mt-0.5">
+      <div className="flex justify-center mt-1">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="flex items-center gap-1 px-2 py-2 text-gray-700 hover:bg-olive-100 rounded-lg transition-colors cursor-pointer"
