@@ -22,17 +22,35 @@ export default function ContactForm() {
   const [submitting, setSubmitting] = useState<boolean>(false);
   const [succeeded, setSucceeded] = useState<boolean>(false);
   const [errors, setErrors] = useState<string | null>(null);
+  const [emailValid, setEmailValid] = useState<boolean>(true);
 
   const contactFormText = useTranslations("contact-form");
 
   const pathname = usePathname();
   const currentLocale = pathname.split("/")[1];
 
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ): void => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+
+    // Validate email when the field changes
+    if (name === "email" && value !== "") {
+      const isValid = validateEmail(value);
+      setEmailValid(isValid);
+      if (!isValid) {
+        toast.warn(contactFormText("invalid-email"), {
+          toastId: "email-validation",
+          autoClose: 3000,
+        });
+      }
+    }
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
@@ -42,7 +60,8 @@ export default function ContactForm() {
       submitting ||
       formData.name === "" ||
       formData.email === "" ||
-      formData.message === ""
+      formData.message === "" ||
+      !emailValid
     ) {
       return;
     }
@@ -126,11 +145,15 @@ export default function ContactForm() {
             <input
               id="email"
               name="email"
-              type="email"
+              type="text"
               required
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg"
+              className={`w-full px-4 py-3 border ${
+                !emailValid && formData.email
+                  ? "border-red-500"
+                  : "border-gray-300"
+              } rounded-lg`}
             />
           </div>
 
@@ -167,14 +190,16 @@ export default function ContactForm() {
               submitting ||
               formData.name === "" ||
               formData.email === "" ||
-              formData.message === ""
+              formData.message === "" ||
+              !emailValid
             }
             className={`w-full py-3 px-6 text-center rounded-lg font-medium transition-colors  ${
               recaptchaValue &&
               !submitting &&
               formData.name !== "" &&
-              formData.name !== "" &&
-              formData.name !== ""
+              formData.email !== "" &&
+              formData.message !== "" &&
+              emailValid
                 ? "bg-figata-cup text-white hover:bg-olive-700 cursor-pointer"
                 : "bg-gray-200 text-gray-500"
             }`}

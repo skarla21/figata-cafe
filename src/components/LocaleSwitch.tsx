@@ -2,9 +2,9 @@
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 import { FiChevronDown } from "react-icons/fi";
 import { Transition } from "@headlessui/react";
+import FlagIcon from "./FlagIcon";
 
 export default function LocaleSwitcher() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,18 +17,6 @@ export default function LocaleSwitcher() {
     en: { name: "English", flag: "gb" },
   };
 
-  //helper to render a flag
-  const renderFlag = (countryCode: string, alt: string) => (
-    <Image
-      src={`/assets/imgs/${countryCode}.png`}
-      alt={alt}
-      height="20"
-      width="20"
-      className="object-cover"
-      priority
-    />
-  );
-
   return (
     <div className="relative">
       <div className="flex justify-center mt-1">
@@ -36,9 +24,11 @@ export default function LocaleSwitcher() {
           onClick={() => setIsOpen(!isOpen)}
           className="flex items-center gap-1 px-2 py-2 text-gray-700 hover:bg-olive-100 rounded-lg transition-colors cursor-pointer"
         >
-          {currentLocale === "en"
-            ? renderFlag(locales.en.flag, "United States flag")
-            : renderFlag(locales.el.flag, "Greek flag")}
+          {currentLocale === "en" ? (
+            <FlagIcon countryCode={locales.en.flag} alt="United States flag" />
+          ) : (
+            <FlagIcon countryCode={locales.el.flag} alt="Greek flag" />
+          )}
           <FiChevronDown
             className={`w-4 h-4 transition-transform ${
               isOpen ? "rotate-180" : ""
@@ -64,9 +54,14 @@ export default function LocaleSwitcher() {
               className="flex items-center gap-3 px-4 py-2 text-gray-700 hover:bg-gray-100"
               onClick={() => setIsOpen(false)}
             >
-              {code === "en"
-                ? renderFlag(locales.en.flag, "United States flag")
-                : renderFlag(locales.el.flag, "Greek flag")}
+              {code === "en" ? (
+                <FlagIcon
+                  countryCode={locales.en.flag}
+                  alt="United States flag"
+                />
+              ) : (
+                <FlagIcon countryCode={locales.el.flag} alt="Greek flag" />
+              )}
               <span>{name}</span>
             </Link>
           ))}

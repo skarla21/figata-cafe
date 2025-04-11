@@ -1,6 +1,6 @@
 "use client";
 import { Link } from "react-scroll";
-import { useState } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import SocialMedia from "./SocialMedia";
@@ -19,12 +19,70 @@ export default function Navbar() {
     { name: navbarText("findus"), target: "findus" },
   ];
 
-  const onSetActiveHandler = (to: string) => setActiveSection(to);
+  // Use named function with useCallback to prevent recreating on each render
+  const onSetActiveHandler = useCallback(function handleSetActive(to: string) {
+    setActiveSection(to);
+  }, []);
+
+  // Create a special handler for the hero section (logo)
+  const handleHeroActive = useCallback(
+    function handleHeroActive() {
+      onSetActiveHandler("hero");
+    },
+    [onSetActiveHandler]
+  );
+
+  // Create individual handlers for each section
+  const handleAboutActive = useCallback(
+    function handleAboutActive() {
+      onSetActiveHandler("about");
+    },
+    [onSetActiveHandler]
+  );
+
+  const handleProductsActive = useCallback(
+    function handleProductsActive() {
+      onSetActiveHandler("products");
+    },
+    [onSetActiveHandler]
+  );
+
+  const handleGalleryActive = useCallback(
+    function handleGalleryActive() {
+      onSetActiveHandler("gallery");
+    },
+    [onSetActiveHandler]
+  );
+
+  const handleFindusActive = useCallback(
+    function handleFindusActive() {
+      onSetActiveHandler("findus");
+    },
+    [onSetActiveHandler]
+  );
+
+  // Map all handlers to their targets with type definition
+  const sectionHandlers: Record<string, () => void> = useMemo(
+    () => ({
+      hero: handleHeroActive,
+      about: handleAboutActive,
+      products: handleProductsActive,
+      gallery: handleGalleryActive,
+      findus: handleFindusActive,
+    }),
+    [
+      handleHeroActive,
+      handleAboutActive,
+      handleProductsActive,
+      handleGalleryActive,
+      handleFindusActive,
+    ]
+  );
 
   return (
     <nav>
       {/* Desktop Navigation */}
-      <div className="fixed hidden md:block top-0 w-full bg-white/80 backdrop-blur-md z-50 shadow-sm">
+      <div className="fixed hidden lg:block top-0 w-full bg-white/80 backdrop-blur-md z-50 shadow-sm">
         <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between relative">
           {/* Logo */}
           <div className="flex-1 flex justify-start w-[60px] items-center space-x-6">
@@ -35,7 +93,7 @@ export default function Navbar() {
               smooth={true}
               offset={-70}
               duration={500}
-              onSetActive={() => onSetActiveHandler("hero")}
+              onSetActive={handleHeroActive}
               className="group hover:bg-olive-100 cursor-pointer p-1 rounded-full transition-colors hover:scale-105"
             >
               <Image
@@ -63,7 +121,7 @@ export default function Navbar() {
                   smooth={true}
                   offset={-70}
                   duration={500}
-                  onSetActive={() => onSetActiveHandler(link.target)}
+                  onSetActive={sectionHandlers[link.target]}
                   className={`group cursor-pointer text-lg font-medium relative transition-colors ${
                     activeSection === link.target
                       ? "text-figata-cup"
@@ -92,7 +150,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Navigation */}
-      <div className="fixed block md:hidden top-0 w-full bg-white/80 backdrop-blur-md z-50 shadow-sm">
+      <div className="fixed block lg:hidden top-0 w-full bg-white/80 backdrop-blur-md z-50 shadow-sm">
         {/* First Row - Logo & Socials */}
         <div className="grid grid-cols-3 items-center px-4 sm:px-6 py-2.5 border-b border-olive-100">
           <div className="flex justify-start">
@@ -103,7 +161,7 @@ export default function Navbar() {
               smooth={true}
               offset={-70}
               duration={500}
-              onSetActive={() => onSetActiveHandler("hero")}
+              onSetActive={handleHeroActive}
             >
               <Image
                 src="/assets/imgs/icon.ico"
@@ -138,7 +196,7 @@ export default function Navbar() {
                 smooth={true}
                 offset={-70}
                 duration={500}
-                onSetActive={() => onSetActiveHandler(link.target)}
+                onSetActive={sectionHandlers[link.target]}
                 className={`relative cursor-pointer px-2 py-1 text-sm font-medium transition-colors ${
                   activeSection === link.target
                     ? "text-figata-cup"

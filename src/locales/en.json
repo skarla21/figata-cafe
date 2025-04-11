@@ -42,6 +42,7 @@
     "message-sending": "Sending...",
     "message-send": "Send Message",
     "message-success": "Message sent successfully! We'll respond shortly.",
-    "message-error": "Something went wrong."
+    "message-error": "Something went wrong.",
+    "invalid-email": "Please enter a valid email address"
   }
 }
