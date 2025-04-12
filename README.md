@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Figata Café Website
 
-## Getting Started
+![Figata Café](public/assets/imgs/logo.jpg)
 
-First, run the development server:
+A modern, responsive website for Figata Café - a local café showcasing its atmosphere, products, and unique charm.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Responsive Design** - Optimized for all devices from mobile to desktop
+- **Image Gallery** - Dynamic image carousel with lightbox functionality
+- **Multi-language Support** - Seamless translation between languages
+- **Interactive UI** - Smooth animations and transitions for engaging user experience
+- **Product Showcase** - Highlighting the café's offerings with beautiful imagery
+- **Contact Information** - Easy access to location and contact details
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Frontend Framework**: [Next.js 14](https://nextjs.org/) with App Router
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Internationalization**: [next-intl](https://next-intl-docs.vercel.app/)
+- **Image Management**: [Cloudinary](https://cloudinary.com/)
+- **UI Components**:
+  - [React Icons](https://react-icons.github.io/react-icons/)
+  - Custom image lightbox and carousel components
+- **Deployment**: [Vercel](https://vercel.com/)
+- **Version Control**: Git
 
-## Learn More
+## 🌐 Deployment
 
-To learn more about Next.js, take a look at the following resources:
+The site is configured for easy deployment on Vercel.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📝 Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **`/src/app`** - Next.js application routes
+- **`/src/components`** - Reusable React components
+- **`/src/actions`** - Server actions for data fetching
+- **`/public`** - Static assets
+- **`/i18n`** - Internationalization configuration and translations
 
-## Deploy on Vercel
+## 🔍 Key Components
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **ImageLightbox** - Custom component for image viewing with zoom capability
+- **ImageCarousel** - Interactive carousel for the gallery section
+- **Responsive Navigation** - Adaptive navbar for all device sizes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📷 Cloudinary Integration
+
+The gallery section uses Cloudinary to manage and deliver optimized images. Images are fetched from the designated "figata-cafe" folder using server-side actions.
+
+## 🛡️ License
+
+This project is licensed under the MIT License.
+
+---
+
+Built with ☕ and 💜 for Figata Café
