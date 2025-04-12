@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import ImageLightbox from "../ImageLightbox";
 
 export default function About() {
   const aboutText = useTranslations("about");
@@ -18,7 +18,7 @@ export default function About() {
         </p>
       </div>
       <div className="relative rounded-2xl overflow-hidden bg-gray-100 shadow-lg transform hover:scale-105 transition-all aspect-square">
-        <Image
+        <ImageLightbox
           src="/assets/imgs/figata_1.jpg"
           alt="Picture of Figata"
           className="object-cover"
