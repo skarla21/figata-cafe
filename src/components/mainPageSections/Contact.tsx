@@ -53,7 +53,7 @@ export default function Contact() {
             <CiMail />
             <span>
               <a
-                href="mailto:contact@figata.com"
+                href={`mailto:${process.env.NEXT_PUBLIC_FIGATA_EMAIL}`}
                 className="text-figata-cup hover:underline"
               >
                 {process.env.NEXT_PUBLIC_FIGATA_EMAIL}
