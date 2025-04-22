@@ -10,11 +10,12 @@
     "findus": "Find Us"
   },
   "about": {
-    "title": "Our Story"
+    "title": "Our Story",
+    "description": "In a quiet corner of Vironas, we created a small coffee shop. It was born from a personal love: coffee, healthy nutrition, and the aromas of Greek soil. The idea started with something simple yet real: the dried fig from the Taxiararchos of Evoia. A small fruit filled with memories, taste, and care, just as we want our coffee to be. Here, every snack and every cup has a reason for existence. They are made with care, a love for nature, and the belief that everyday life can have authentic flavor. Come for a coffee, a moment of relaxation, a small escape."
   },
   "products": {
     "title": "Our Products",
-    "description": "Discover our curated selection of products that blend quality with style. Each item is designed to elevate your everyday experience. (Placeholder text)"
+    "description": "Discover our curated selection of products that blend quality with style. Each item is designed to elevate your everyday experience."
   },
   "gallery": {
     "title": "Gallery"

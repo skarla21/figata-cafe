@@ -11,10 +11,7 @@ export default function About() {
           {aboutText("title")}
         </h2>
         <p className="text-gray-600 text-lg leading-relaxed">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
-          aliquid, asperiores nemo repudiandae molestias sit, minima assumenda
-          odit obcaecati ut quaerat molestiae amet soluta dolorem fugiat dicta.
-          Distinctio, dicta porro!
+          {aboutText("description")}
         </p>
       </div>
       <div className="relative rounded-2xl overflow-hidden bg-gray-100 shadow-lg transform hover:scale-105 transition-all aspect-square">

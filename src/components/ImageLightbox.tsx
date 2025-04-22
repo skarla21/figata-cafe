@@ -56,11 +56,11 @@ export default function ImageLightbox({
   // Component for thumbnail image with loading state
   const ThumbnailImage = (
     <div
-      className="relative"
+      className="relative rounded-xl overflow-hidden"
       style={fill ? { width: "100%", height: "100%" } : undefined}
     >
       {isLoading && (
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-md">
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-xl">
           <div className="w-8 h-8 border-4 border-figata-cup border-t-transparent rounded-full animate-spin"></div>
         </div>
       )}
@@ -71,7 +71,7 @@ export default function ImageLightbox({
         height={!fill ? height : undefined}
         fill={fill}
         sizes={sizes}
-        className={`${className || ""} cursor-pointer ${
+        className={`${className || ""} cursor-pointer rounded-xl ${
           isLoading ? "opacity-0" : "opacity-100"
         }`}
         onClick={handleImageClick}
@@ -102,14 +102,14 @@ export default function ImageLightbox({
 
             <div
               onClick={(e) => e.stopPropagation()}
-              className="relative w-auto h-auto max-w-[90vw] max-h-[90vh]"
+              className="relative w-auto h-auto max-w-[90vw] max-h-[90vh] rounded-xl overflow-hidden"
             >
               <Image
                 src={src}
                 alt={alt}
                 width={1200}
                 height={800}
-                className="object-contain"
+                className="object-contain rounded-xl"
                 style={{
                   maxWidth: "90vw",
                   maxHeight: "85vh",

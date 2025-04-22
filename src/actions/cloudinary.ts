@@ -37,7 +37,7 @@ export async function getGalleryImages(): Promise<CloudinaryImage[]> {
     // Search for images in the figata-cafe folder
     const result = await cloudinary.search
       .expression("folder:figata-cafe")
-      .sort_by("created_at", "desc")
+      .sort_by("created_at", "asc")
       .max_results(30)
       .execute();
 

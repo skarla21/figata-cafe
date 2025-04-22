@@ -51,28 +51,27 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
   // If no images, show a loading state
   if (!images.length) {
     return (
-      <div className="w-full aspect-video bg-gray-100 rounded-xl flex items-center justify-center">
+      <div className="w-full aspect-video bg-gray-100 flex items-center justify-center">
         <div className="w-12 h-12 border-4 border-figata-cup border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
   }
 
   return (
-    <div className="relative w-full h-[60vh] rounded-xl">
+    <div className="relative w-full h-[60vh]">
       {/* Left adjacent image (half-visible, reduced opacity) - only visible on lg screens and above */}
       <div
-        className="absolute top-0 left-0 h-full w-[25%] transform -translate-x-1/2 opacity-50 z-10 hidden lg:block"
+        className="absolute top-0 left-[15%] h-full w-[30%] transform -translate-x-1/2 opacity-50 z-10 hidden lg:block"
         style={{ pointerEvents: "none" }}
       >
-        <div className="relative h-full w-[200%]">
-          <div className="absolute inset-0" style={{ borderRadius: "12px" }}>
+        <div className="relative h-full w-full">
+          <div className="absolute inset-0 flex items-center justify-center">
             <ImageLightbox
               src={images[leftIndex].secure_url}
               alt={`Gallery image ${leftIndex + 1}`}
               fill
               sizes="25vw"
-              className="object-contain"
-              style={{ borderRadius: "12px" }}
+              className="object-contain !rounded-none"
             />
           </div>
         </div>
@@ -95,7 +94,6 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
                 style={{
                   maxHeight: "95%",
                   maxWidth: "85%",
-                  borderRadius: "12px",
                 }}
               >
                 <ImageLightbox
@@ -103,9 +101,8 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
                   alt={`Gallery image ${index + 1}`}
                   width={image.width}
                   height={image.height}
-                  className="object-contain max-h-[calc(60vh-20px)] max-w-full mx-auto"
+                  className="object-contain max-h-[calc(60vh-20px)] max-w-full mx-auto !rounded-none"
                   priority={index === currentIndex}
-                  style={{ borderRadius: "12px" }}
                 />
               </div>
             </div>
@@ -115,18 +112,17 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
 
       {/* Right adjacent image (half-visible, reduced opacity) - only visible on lg screens and above */}
       <div
-        className="absolute top-0 right-0 h-full w-[25%] transform translate-x-1/2 opacity-50 z-10 hidden lg:block"
+        className="absolute top-0 right-[15%] h-full w-[30%] transform translate-x-1/2 opacity-50 z-10 hidden lg:block"
         style={{ pointerEvents: "none" }}
       >
-        <div className="relative h-full w-[200%] right-full">
-          <div className="absolute inset-0" style={{ borderRadius: "12px" }}>
+        <div className="relative h-full w-full">
+          <div className="absolute inset-0 flex items-center justify-center">
             <ImageLightbox
               src={images[rightIndex].secure_url}
               alt={`Gallery image ${rightIndex + 1}`}
               fill
               sizes="25vw"
-              className="object-contain"
-              style={{ borderRadius: "12px" }}
+              className="object-contain !rounded-none"
             />
           </div>
         </div>
