@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import { FiCoffee, FiHeart, FiStar } from "react-icons/fi";
+import { FiCoffee, FiHeart } from "react-icons/fi";
+import { BiCookie } from "react-icons/bi";
 
 // Fixed positions for icons to prevent hydration mismatches
 const iconPositions = [
@@ -116,7 +117,7 @@ export default function DecorativeBackground() {
             ) : i % 3 === 1 ? (
               <FiHeart className="w-8 h-8 md:w-10 md:h-10" />
             ) : (
-              <FiStar className="w-8 h-8 md:w-10 md:h-10" />
+              <BiCookie className="w-8 h-8 md:w-10 md:h-10" />
             )}
           </motion.div>
         ))}
