@@ -112,7 +112,7 @@ export default function ContactForm() {
 
   return (
     <section className="max-w-2xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-      <div className="bg-white p-6 sm:p-8">
+      <div className="bg-figata-cup/10 p-6 sm:p-8 rounded-2xl">
         <h3 className="text-2xl font-bold text-figata-cup mb-8 text-center">
           {contactFormText("message-title")}
         </h3>

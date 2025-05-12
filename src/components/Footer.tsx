@@ -21,7 +21,7 @@ export default function Footer() {
   return (
     <footer className="bg-olive-100 text-figata-cup mt-20 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col items-center justify-center gap-6 relative">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center relative">
           {/* Logo and Tagline */}
           <div className="flex flex-col items-center">
             <div className="relative w-24 h-24 mb-2">
@@ -57,7 +57,7 @@ export default function Footer() {
             onClick={() => scrollToTop("smooth")}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 items-center justify-center w-12 h-12 rounded-full bg-figata-cup text-olive-100 shadow-lg hover:shadow-xl cursor-pointer transition-shadow"
+            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 items-center justify-center w-12 h-12 rounded-full bg-figata-cup text-olive-100 shadow-lg hover:shadow-xl cursor-pointer transition-shadow z-50"
             aria-label="Scroll to top"
           >
             <FiArrowUp className="w-6 h-6" />
@@ -66,7 +66,7 @@ export default function Footer() {
 
         {/* Mobile Scroll Button */}
         <div
-          className={`md:hidden fixed bottom-4 right-4 transition-opacity duration-300 ${
+          className={`md:hidden fixed bottom-4 right-4 transition-opacity duration-300 z-50 ${
             isScrolled ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
         >
