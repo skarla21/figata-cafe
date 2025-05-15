@@ -19,7 +19,7 @@ export default function Footer() {
   }, [handleScroll]);
 
   return (
-    <footer className="bg-olive-100 text-figata-cup mt-20 py-8 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-olive-200 text-figata-cup mt-20 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center relative">
           {/* Logo and Tagline */}

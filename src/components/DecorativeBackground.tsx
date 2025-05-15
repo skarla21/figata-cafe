@@ -1,15 +1,16 @@
 "use client";
 import { motion } from "framer-motion";
-import { FiCoffee, FiHeart } from "react-icons/fi";
+import { FiCoffee } from "react-icons/fi";
 import { BiCookie } from "react-icons/bi";
 
 // Fixed positions for icons to prevent hydration mismatches
 const iconPositions = [
   { left: "10%", top: "20%" },
-  { left: "30%", top: "70%" },
-  { left: "50%", top: "30%" },
-  { left: "70%", top: "60%" },
   { left: "85%", top: "40%" },
+  { left: "70%", top: "60%" },
+  { left: "50%", top: "30%" },
+  { left: "30%", top: "70%" },
+
   { left: "20%", top: "50%" },
 ];
 
@@ -112,10 +113,8 @@ export default function DecorativeBackground() {
               top: position.top,
             }}
           >
-            {i % 3 === 0 ? (
+            {i % 2 === 0 ? (
               <FiCoffee className="w-8 h-8 md:w-10 md:h-10" />
-            ) : i % 3 === 1 ? (
-              <FiHeart className="w-8 h-8 md:w-10 md:h-10" />
             ) : (
               <BiCookie className="w-8 h-8 md:w-10 md:h-10" />
             )}
