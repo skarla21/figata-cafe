@@ -15,7 +15,9 @@
   },
   "products": {
     "title": "Our Products",
-    "description": "Discover our curated selection of products that blend quality with style. Each item is designed to elevate your everyday experience."
+    "description": "Discover our curated selection of products that blend quality with style. Each item is designed to elevate your everyday experience.",
+    "error": "Failed to load product images. Please try again later.",
+    "noImages": "No product images found."
   },
   "gallery": {
     "title": "Gallery"

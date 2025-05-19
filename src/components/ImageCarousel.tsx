@@ -1,5 +1,5 @@
 "use client";
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import ImageLightbox from "./ImageLightbox";
 
@@ -17,6 +17,9 @@ interface ImageCarouselProps {
 
 export default function ImageCarousel({ images }: ImageCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   const prevImage = useCallback(() => {
     setCurrentIndex((prevIndex) =>
@@ -48,6 +51,33 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [prevImage, nextImage]);
 
+  // Touch handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      nextImage();
+    }
+    if (isRightSwipe) {
+      prevImage();
+    }
+
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
+
   // If no images, show a loading state
   if (!images.length) {
     return (
@@ -58,7 +88,13 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
   }
 
   return (
-    <div className="relative w-full h-[60vh]">
+    <div
+      ref={carouselRef}
+      className="relative w-full h-[60vh]"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       {/* Left adjacent image (half-visible, reduced opacity) - only visible on lg screens and above */}
       <div
         className="absolute top-0 left-[15%] h-full w-[30%] transform -translate-x-1/2 opacity-50 z-10 hidden lg:block"
@@ -78,7 +114,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
       </div>
 
       {/* Main image container */}
-      <div className="absolute inset-0 flex items-center justify-center">
+      <div className="relative h-full w-full">
         {images.map((image, index) => (
           <div
             key={image.public_id}
@@ -128,17 +164,17 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
         </div>
       </div>
 
-      {/* Navigation arrows */}
+      {/* Navigation arrows - hidden on mobile */}
       <button
         onClick={prevImage}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white hover:scale-110 transition-all duration-300 cursor-pointer text-figata-cup p-2 rounded-full z-30 shadow-md"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white hover:scale-110 transition-all duration-300 cursor-pointer text-figata-cup p-2 rounded-full z-30 shadow-md hidden md:block"
         aria-label="Previous image"
       >
         <FiChevronLeft size={24} />
       </button>
       <button
         onClick={nextImage}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white hover:scale-110 transition-all duration-300 cursor-pointer text-figata-cup p-2 rounded-full z-30 shadow-md"
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white hover:scale-110 transition-all duration-300 cursor-pointer text-figata-cup p-2 rounded-full z-30 shadow-md hidden md:block"
         aria-label="Next image"
       >
         <FiChevronRight size={24} />

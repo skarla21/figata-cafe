@@ -1,20 +1,32 @@
+"use client";
 import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 import ImageLightbox from "../ImageLightbox";
+import { getProductsImages, CloudinaryImage } from "@/actions/cloudinary";
 
 export default function Products() {
   const productsText = useTranslations("products");
+  const [images, setImages] = useState<CloudinaryImage[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  // Array of product images for easy expansion
-  const productImages = [
-    { src: "/assets/imgs/product1.jpg", alt: "Product 1" },
-    { src: "/assets/imgs/product2.jpg", alt: "Product 2" },
-    { src: "/assets/imgs/product3.jpg", alt: "Product 3" },
-    { src: "/assets/imgs/product4.jpg", alt: "Product 4" },
-    { src: "/assets/imgs/product5.jpg", alt: "Product 5" },
-    { src: "/assets/imgs/product6.jpg", alt: "Product 6" },
-    { src: "/assets/imgs/product7.jpg", alt: "Product 7" },
-    { src: "/assets/imgs/product8.jpg", alt: "Product 8" },
-  ];
+  useEffect(() => {
+    async function loadImages() {
+      try {
+        setLoading(true);
+        const fetchedImages = await getProductsImages();
+        setImages(fetchedImages);
+        setError(null);
+      } catch (err) {
+        console.error("Failed to load product images:", err);
+        setError(productsText("error"));
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadImages();
+  }, [productsText]);
 
   return (
     <div className="flex flex-col py-12 space-y-12">
@@ -30,22 +42,45 @@ export default function Products() {
 
       {/* Product images grid */}
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 px-4">
-        {productImages.map((product, index) => (
-          <div
-            key={index}
-            className="relative rounded-2xl overflow-hidden bg-gray-100 shadow-lg transform hover:scale-105 transition-all aspect-square"
-          >
-            <ImageLightbox
-              src={product.src}
-              alt={product.alt}
-              className="object-cover"
-              width={600}
-              height={600}
-              style={{ width: "auto", height: "auto" }}
-              priority={index < 4} // Only prioritize first 4 images
-            />
+        {loading ? (
+          // Loading state
+          Array.from({ length: 8 }).map((_, index) => (
+            <div
+              key={index}
+              className="relative rounded-2xl overflow-hidden bg-gray-100 shadow-lg aspect-square flex items-center justify-center"
+            >
+              <div className="w-12 h-12 border-4 border-figata-cup border-t-transparent rounded-full animate-spin"></div>
+            </div>
+          ))
+        ) : error ? (
+          // Error state
+          <div className="col-span-full text-red-500 text-center p-8 bg-red-50 rounded-xl">
+            {error}
           </div>
-        ))}
+        ) : images.length === 0 ? (
+          // No images state
+          <div className="col-span-full text-gray-500 text-center p-8 bg-gray-50 rounded-xl">
+            {productsText("noImages")}
+          </div>
+        ) : (
+          // Images grid
+          images.map((image, index) => (
+            <div
+              key={image.public_id}
+              className="relative rounded-2xl overflow-hidden bg-gray-100 shadow-lg transform hover:scale-105 transition-all aspect-square"
+            >
+              <ImageLightbox
+                src={image.secure_url}
+                alt={`Product ${index + 1}`}
+                className="object-cover"
+                width={image.width}
+                height={image.height}
+                style={{ width: "auto", height: "auto" }}
+                priority={index < 4} // Only prioritize first 4 images
+              />
+            </div>
+          ))
+        )}
       </div>
     </div>
   );

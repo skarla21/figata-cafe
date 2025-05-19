@@ -29,7 +29,7 @@ export default function Gallery() {
   }, []);
 
   return (
-    <div className="space-y-12">
+    <div className="md:space-y-12">
       <h2 className="text-4xl font-bold text-figata-cup text-center">
         {galleryText("title")}
       </h2>

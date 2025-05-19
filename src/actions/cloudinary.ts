@@ -29,9 +29,7 @@ cloudinary.config({
   secure: true,
 });
 
-/**
- * Fetch images from the Cloudinary 'figata-cafe' folder
- */
+// Fetch images from the Cloudinary 'figata-cafe' folder
 export async function getGalleryImages(): Promise<CloudinaryImage[]> {
   try {
     // Search for images in the figata-cafe folder
@@ -51,6 +49,30 @@ export async function getGalleryImages(): Promise<CloudinaryImage[]> {
     }));
   } catch (error) {
     console.error("Error fetching Cloudinary images:", error);
+    return [];
+  }
+}
+
+// Fetch images from the Cloudinary 'figata-products' folder
+export async function getProductsImages(): Promise<CloudinaryImage[]> {
+  try {
+    // Search for images in the figata-products folder
+    const result = await cloudinary.search
+      .expression("folder:figata-products")
+      .sort_by("created_at", "asc")
+      .max_results(30)
+      .execute();
+
+    // Return the resources array
+    return result.resources.map((resource: CloudinaryResource) => ({
+      public_id: resource.public_id,
+      secure_url: resource.secure_url,
+      width: resource.width,
+      height: resource.height,
+      format: resource.format,
+    }));
+  } catch (error) {
+    console.error("Error fetching Cloudinary product images:", error);
     return [];
   }
 }
