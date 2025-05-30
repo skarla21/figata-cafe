@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   description:
     "A cozy café in Vironas, Athens, offering specialty coffee, healthy snacks, and a warm atmosphere. Visit us for a unique coffee experience.",
   metadataBase: new URL("https://figata.gr"),
+  verification: {
+    google: "C5Cx4N7NKFXNEeh-sm-tjLBr9EuXoe5_798xqv2Qq40",
+  },
   icons: {
     icon: [
       { url: "/assets/imgs/icon.ico", type: "image/png", sizes: "192x192" },
