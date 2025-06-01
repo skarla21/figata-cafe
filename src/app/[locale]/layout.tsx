@@ -7,7 +7,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Figata Café",
   description:
-    "A cozy café in Vironas, Athens, offering specialty coffee, healthy snacks, and a warm atmosphere. Visit us for a unique coffee experience.",
+    "Σε μια ήσυχη γωνιά του Βύρωνα, δημιουργήσαμε ένα μικρό καφέ. Έναν χώρο που γεννήθηκε από μια προσωπική αγάπη: τον καφέ, την υγιεινή διατροφή και τα αρώματα της ελληνικής γης.",
   metadataBase: new URL("https://figata.gr"),
   verification: {
     google: "C5Cx4N7NKFXNEeh-sm-tjLBr9EuXoe5_798xqv2Qq40",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "Figata Café",
     description:
-      "A cozy café in Vironas, Athens, offering specialty coffee, healthy snacks, and a warm atmosphere. Visit us for a unique coffee experience.",
+      "Σε μια ήσυχη γωνιά του Βύρωνα, δημιουργήσαμε ένα μικρό καφέ. Έναν χώρο που γεννήθηκε από μια προσωπική αγάπη: τον καφέ, την υγιεινή διατροφή και τα αρώματα της ελληνικής γης.",
     siteName: "Figata Café",
     locale: "el_GR",
     images: [
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Figata Café",
     description:
-      "A cozy café in Vironas, Athens, offering specialty coffee, healthy snacks, and a warm atmosphere.",
+      "Σε μια ήσυχη γωνιά του Βύρωνα, δημιουργήσαμε ένα μικρό καφέ. Έναν χώρο που γεννήθηκε από μια προσωπική αγάπη: τον καφέ, την υγιεινή διατροφή και τα αρώματα της ελληνικής γης.",
     images: ["/assets/imgs/logo.jpg"],
   },
   alternates: {
