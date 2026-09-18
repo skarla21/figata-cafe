@@ -25,17 +25,17 @@ export default function Footer({ locale }: { locale: string }) {
           </h2>
           <ul className="mt-4 space-y-2 text-sm text-v2-beige/80">
             <li>
-              <V2Link href={v2Routes.menu} className="hover:text-white">
+              <V2Link href={v2Routes.products} className="hover:text-white">
                 {t.footer.coffee}
               </V2Link>
             </li>
             <li>
-              <V2Link href={v2Routes.menu} className="hover:text-white">
+              <V2Link href={v2Routes.products} className="hover:text-white">
                 {t.footer.drinks}
               </V2Link>
             </li>
             <li>
-              <V2Link href={v2Routes.menu} className="hover:text-white">
+              <V2Link href={v2Routes.products} className="hover:text-white">
                 {t.footer.figsSweets}
               </V2Link>
             </li>

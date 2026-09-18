@@ -36,9 +36,12 @@ export default function Logo({ className = "", markClassName }: LogoProps) {
       <Image
         src="/v2/brand/fig.png"
         alt=""
-        width={40}
-        height={57}
-        className={markClassName ?? "h-11 w-auto"}
+        width={379}
+        height={532}
+        className={
+          markClassName ??
+          "h-12 w-auto drop-shadow-[0_1px_8px_rgba(0,0,0,0.55)]"
+        }
       />
       <span className="flex flex-col leading-none">
         <span className="font-display text-[1.65rem] tracking-[0.22em]">

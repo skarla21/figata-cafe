@@ -34,7 +34,7 @@ export default function Hero({ locale }: { locale: string }) {
           {t.hero.subtitle}
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <Button href={v2Routes.menu} variant="solid">
+          <Button href={`${v2Routes.home}#products`} variant="solid">
             {t.hero.ctaMenu}
           </Button>
           <Button href={`${v2Routes.home}#about`} variant="ghost">

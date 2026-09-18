@@ -1,7 +1,6 @@
 export const v2Routes = {
   home: "/preview",
   about: "/preview/about",
-  menu: "/preview/menu",
   products: "/preview/products",
   gallery: "/preview/gallery",
   contact: "/preview/contact",
@@ -34,9 +33,8 @@ export function hashFromHref(href: string) {
 
 export const headerNav = [
   { key: "home", href: v2Routes.home },
-  { key: "about", href: `${v2Routes.home}#about` },
-  { key: "menu", href: `${v2Routes.home}#menu` },
   { key: "products", href: `${v2Routes.home}#products` },
+  { key: "about", href: `${v2Routes.home}#about` },
   { key: "gallery", href: `${v2Routes.home}#gallery` },
   { key: "contact", href: `${v2Routes.home}#visit` },
 ] as const;

@@ -3,7 +3,6 @@ import Footer from "../components/Footer";
 import HashScroll from "../components/HashScroll";
 import Hero from "../components/sections/Hero";
 import ValueStrip from "../components/sections/ValueStrip";
-import MenuTeaser from "../components/sections/MenuTeaser";
 import FeaturedProducts from "../components/sections/FeaturedProducts";
 import About from "../components/sections/About";
 import GalleryStrip from "../components/sections/GalleryStrip";
@@ -17,7 +16,6 @@ export default function Home({ locale }: { locale: string }) {
       <main>
         <Hero locale={locale} />
         <ValueStrip locale={locale} />
-        <MenuTeaser locale={locale} />
         <FeaturedProducts locale={locale} />
         <About locale={locale} />
         <GalleryStrip locale={locale} />
