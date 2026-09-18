@@ -1,0 +1,100 @@
+{
+  "nav": {
+    "home": "HOME",
+    "about": "OUR STORY",
+    "menu": "MENU",
+    "products": "PRODUCTS",
+    "gallery": "GALLERY",
+    "contact": "CONTACT",
+    "visitUs": "VISIT US",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "scrollDown": "Scroll down"
+  },
+  "hero": {
+    "titleLine1": "ΣΥΚΟ",
+    "ampersand": "&",
+    "titleLine2": "χαμογέλα",
+    "subtitle": "Coffee, tradition, authentic flavors and beautiful moments, every day.",
+    "ctaMenu": "SEE THE MENU",
+    "ctaAbout": "OUR STORY"
+  },
+  "value": {
+    "figs": "DRIED FIGS",
+    "figsSub": "WHOLESALE PRODUCE",
+    "local": "LOCAL PRODUCTS &",
+    "localSub": "HANDMADE CREATIONS",
+    "coffee": "SPECIALTY COFFEE",
+    "coffeeSub": "& DRINKS",
+    "smile": "FIGS AND SMILES,",
+    "smileSub": "EVERY DAY!"
+  },
+  "products": {
+    "eyebrow": "AUTHENTIC FLAVORS",
+    "title": "Distinctive products",
+    "more": "LEARN MORE",
+    "figsTitle": "DRIED FIGS",
+    "figsBody": "Pure, Greek, and rich in nutrients.",
+    "coffeeTitle": "COFFEE & DRINKS",
+    "coffeeBody": "Selected beans and distinctive drinks for every moment.",
+    "handmadeTitle": "HANDMADE PRODUCTS",
+    "handmadeBody": "Local flavors made with care and attention.",
+    "giftsTitle": "GIFT BASKETS",
+    "giftsBody": "Perfect for every occasion, with a taste of tradition."
+  },
+  "about": {
+    "eyebrow": "OUR STORY",
+    "title": "Tradition that becomes an experience",
+    "p1": "In a quiet corner of Vyronas we created a small cafe from a love of coffee, wholesome food, and the aromas of Greek soil. It began with the dried fig of Taxiarches, Evia — a small fruit full of memory, flavor, and care.",
+    "p2": "Here every drink and every bite has a reason to exist. Our aim is everyday moments of pleasure and hospitality, always with a smile.",
+    "cta": "GET TO KNOW US"
+  },
+  "gallery": {
+    "title": "MOMENTS FROM FIGATA",
+    "cta": "SEE THE FULL GALLERY"
+  },
+  "visit": {
+    "eyebrow": "VISIT US",
+    "title": "Come see us in Vyronas",
+    "tagline": "Figs and smiles!",
+    "hoursNote": "Our weekly hours."
+  },
+  "footer": {
+    "tagline": "Figs and smiles, every day!",
+    "menu": "MENU",
+    "coffee": "Coffee",
+    "drinks": "Drinks",
+    "figsSweets": "Figs & Sweets",
+    "products": "Products",
+    "useful": "USEFUL",
+    "about": "Our Story",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "terms": "Terms of Use",
+    "newsletter": "NEWSLETTER",
+    "newsletterText": "Join us and hear about news and offers!",
+    "emailPlaceholder": "Your email",
+    "subscribe": "Subscribe",
+    "newsletterThanks": "Thank you! Our news is coming soon.",
+    "copyright": "© 2026 Figata Cafe. All rights reserved."
+  },
+  "stubs": {
+    "aboutTitle": "Our story",
+    "aboutBody": "Figata Cafe was born in Vyronas from a love of coffee, dried figs, and authentic Greek flavors. Come meet us in person.",
+    "menuTitle": "Menu",
+    "menuBody": "The full menu is being prepared for the new site. Until then, ask us in the shop — coffee, drinks, figs, and sweets are waiting every day.",
+    "productsTitle": "Products",
+    "productsBody": "Wholesale dried figs, specialty coffee, and handmade creations with the aroma of Greek soil.",
+    "galleryTitle": "Gallery",
+    "galleryBody": "Moments from Figata: the space, the coffee, the figs, and the people who pass through Vyronas.",
+    "contactTitle": "Contact",
+    "contactBody": "Find us at Agias Sofias 128 in Vyronas. Call or drop by for a coffee.",
+    "termsTitle": "Terms of use",
+    "termsBody": "This page is temporary. Full terms for figata.gr will be published before the new homepage goes live. The site shares information about Figata Cafe and does not collect newsletter signups yet.",
+    "comingSoon": "Coming soon"
+  },
+  "meta": {
+    "title": "Figata Cafe — Figs and smiles",
+    "description": "Coffee, dried figs, and authentic flavors in a quiet corner of Vyronas."
+  }
+}

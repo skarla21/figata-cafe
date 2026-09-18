@@ -32,4 +32,14 @@
   --color-olive-800: #3f4d20;
   --color-olive-900: #2d361a; /*Dark olive*/
   --color-figata-cup: #73917f;
+  --color-v2-paper: #f6f4f2;
+  --color-v2-paper-2: #f4f2ee;
+  --color-v2-cream: #ece8e0;
+  --color-v2-beige: #e9e5db;
+  --color-v2-ink: #2c2a24;
+  --color-v2-olive: #585828;
+  --color-v2-olive-dark: #3a3a21;
+  --color-v2-olive-mid: #424129;
+  --color-v2-gold: #9a8b4a;
+  --color-v2-muted: #6e675c;
 }
