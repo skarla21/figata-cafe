@@ -7,26 +7,20 @@ type LogoProps = {
 
 export function FigMark({ className = "h-10 w-8" }: { className?: string }) {
   return (
-    <svg
-      viewBox="0 0 48 72"
-      fill="none"
-      className={className}
+    <span
+      className={`inline-block bg-current ${className}`}
+      style={{
+        WebkitMaskImage: "url(/v2/brand/fig.png)",
+        maskImage: "url(/v2/brand/fig.png)",
+        WebkitMaskSize: "contain",
+        maskSize: "contain",
+        WebkitMaskRepeat: "no-repeat",
+        maskRepeat: "no-repeat",
+        WebkitMaskPosition: "center",
+        maskPosition: "center",
+      }}
       aria-hidden="true"
-    >
-      <path
-        d="M24 10c-1-5.2-7.2-9-12-6.8C18.4 5 21.6 12 23 18"
-        stroke="currentColor"
-        strokeWidth="2.1"
-        strokeLinecap="round"
-      />
-      <path
-        d="M23.2 18C10 21 3.2 37 6.8 54c2.4 12.2 10 18 17.2 18s14.8-5.8 17.2-18c2.8-13.2-2.4-27.2-12.8-36"
-        stroke="currentColor"
-        strokeWidth="2.1"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+    />
   );
 }
 

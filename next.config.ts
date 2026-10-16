@@ -8,6 +8,12 @@ const nextConfig: NextConfig = {
   redirects: async () => {
     return [
       {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.figata.gr" }],
+        destination: "https://figata.gr/:path*",
+        permanent: true,
+      },
+      {
         source: "/:locale/preview",
         destination: "/:locale",
         permanent: true,
@@ -15,6 +21,11 @@ const nextConfig: NextConfig = {
       {
         source: "/:locale/preview/:path*",
         destination: "/:locale/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:locale/contact",
+        destination: "/:locale#visit",
         permanent: true,
       },
     ];

@@ -63,7 +63,7 @@ export default function Footer({ locale }: { locale: string }) {
               </V2Link>
             </li>
             <li>
-              <V2Link href={v2Routes.contact} className="hover:text-white">
+              <V2Link href={`${v2Routes.home}#visit`} className="hover:text-white">
                 {t.footer.contact}
               </V2Link>
             </li>
@@ -85,9 +85,20 @@ export default function Footer({ locale }: { locale: string }) {
           <NewsletterForm />
         </div>
       </div>
-      <p className="border-t border-white/10 px-6 py-5 text-center text-xs text-v2-beige/55">
-        {t.footer.copyright}
-      </p>
+      <div className="flex flex-col items-center justify-between gap-2 border-t border-white/10 px-6 py-5 text-xs text-v2-beige/55 sm:flex-row lg:px-16">
+        <p>{t.footer.copyright}</p>
+        <p>
+          {t.footer.designedBy}{" "}
+          <a
+            href="https://www.linkedin.com/in/antonis-skarlatos-a41781212/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline-offset-2 hover:text-white hover:underline"
+          >
+            {t.footer.designerName}
+          </a>
+        </p>
+      </div>
     </footer>
   );
 }

@@ -13,6 +13,8 @@ export default async function TermsPage({
       locale={locale}
       title={t.stubs.termsTitle}
       body={t.stubs.termsBody}
+      updatedLabel={t.stubs.termsUpdated}
+      sections={t.stubs.termsSections}
     />
   );
 }

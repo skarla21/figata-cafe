@@ -71,7 +71,7 @@ export const productCards = [
   { id: "figs", image: photos.figsBowl, titleKey: "figsTitle", bodyKey: "figsBody" },
   { id: "coffee", image: photos.latteCup, titleKey: "coffeeTitle", bodyKey: "coffeeBody" },
   { id: "handmade", image: photos.figToast, titleKey: "handmadeTitle", bodyKey: "handmadeBody" },
-  { id: "gifts", image: photos.figGift, titleKey: "giftsTitle", bodyKey: "giftsBody" },
+  { id: "gifts", image: photos.productSpread, titleKey: "giftsTitle", bodyKey: "giftsBody" },
 ] as const;
 
 export const galleryStrip = [

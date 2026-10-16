@@ -4,10 +4,17 @@ import Footer from "./Footer";
 import { v2Locale } from "../i18n";
 import type { V2Photo } from "../data/media";
 
+type Section = {
+  title: string;
+  paragraphs: readonly string[];
+};
+
 type Props = {
   locale: string;
   title: string;
   body: string;
+  sections?: readonly Section[];
+  updatedLabel?: string;
   images?: readonly V2Photo[];
   children?: React.ReactNode;
 };
@@ -16,6 +23,8 @@ export default function StubPage({
   locale,
   title,
   body,
+  sections,
+  updatedLabel,
   images,
   children,
 }: Props) {
@@ -28,8 +37,26 @@ export default function StubPage({
         <h1 className="font-display max-w-3xl text-4xl text-v2-ink sm:text-5xl">
           {title}
         </h1>
+        {updatedLabel ? (
+          <p className="mt-3 text-sm text-v2-muted">{updatedLabel}</p>
+        ) : null}
         <p className="mt-6 max-w-2xl text-base leading-7 text-v2-muted">{body}</p>
-        {children}
+        {sections && sections.length > 0 ? (
+          <div className="mt-10 max-w-2xl space-y-8">
+            {sections.map((section) => (
+              <section key={section.title}>
+                <h2 className="font-display text-2xl text-v2-ink">{section.title}</h2>
+                <div className="mt-3 space-y-3">
+                  {section.paragraphs.map((paragraph) => (
+                    <p key={paragraph} className="text-base leading-7 text-v2-muted">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+              </section>
+            ))}
+          </div>
+        ) : null}
         {images && images.length > 0 ? (
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {images.map((photo) => (
@@ -45,6 +72,7 @@ export default function StubPage({
             ))}
           </div>
         ) : null}
+        {children}
       </main>
       <Footer locale={locale} />
     </>

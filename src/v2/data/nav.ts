@@ -3,7 +3,6 @@ export const v2Routes = {
   about: "/about",
   products: "/products",
   gallery: "/gallery",
-  contact: "/contact",
   terms: "/terms",
 } as const;
 

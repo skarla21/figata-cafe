@@ -39,15 +39,41 @@
     "coffeeBody": "Selected beans and distinctive drinks for every moment.",
     "handmadeTitle": "HANDMADE PRODUCTS",
     "handmadeBody": "Local flavors made with care and attention.",
-    "giftsTitle": "GIFT BASKETS",
-    "giftsBody": "Perfect for every occasion, with a taste of tradition."
+    "giftsTitle": "SNACKS & TREATS",
+    "giftsBody": "Fig bites and coffee-side favorites to enjoy every day."
   },
   "about": {
     "eyebrow": "OUR STORY",
     "title": "Tradition that becomes an experience",
-    "p1": "In a quiet corner of Vyronas we created a small cafe from a love of coffee, wholesome food, and the aromas of Greek soil. It began with the dried fig of Taxiarches, Evia — a small fruit full of memory, flavor, and care.",
-    "p2": "Here every drink and every bite has a reason to exist. Our aim is everyday moments of pleasure and hospitality, always with a smile.",
+    "p1": "Figata Cafe is a cozy neighborhood coffee shop in Vyronas for good specialty coffee, natural fig products, and authentic Greek flavors. In a quiet corner we created a small cafe from a love of coffee, wholesome food, and the aromas of Greek soil. It began with the dried fig of Taxiarches, Evia — a small fruit full of memory, flavor, and care.",
+    "p2": "Here every drink and every bite has a reason to exist. Our aim is everyday moments of pleasure and hospitality in a warm, cozy place in Vyronas — always with a smile.",
     "cta": "GET TO KNOW US"
+  },
+  "faq": {
+    "eyebrow": "LEARN MORE",
+    "title": "Frequently asked questions",
+    "items": [
+      {
+        "q": "Where is Figata Cafe?",
+        "a": "At Agias Sofias 128, Vyronas 16232 — a cozy neighborhood cafe for good coffee and a quiet break."
+      },
+      {
+        "q": "What do you serve?",
+        "a": "Specialty coffee and drinks, natural dried figs from Taxiarches in Evia, handmade creations, and local flavors."
+      },
+      {
+        "q": "Is it a good cozy place for coffee in Vyronas?",
+        "a": "Yes. Figata is a small, cozy cafe in a quiet corner of Vyronas — ideal for good coffee, relaxation, and authentic flavors."
+      },
+      {
+        "q": "What are your opening hours?",
+        "a": "Monday, Wednesday, Thursday and Friday 07:00–19:00; Tuesday 07:00–15:00; Saturday 08:00–15:00; Sunday 09:00–15:00."
+      },
+      {
+        "q": "Do you sell natural fig products?",
+        "a": "Yes. We offer pure Greek dried figs and related products with a taste of tradition — great for everyday enjoyment or gifts."
+      }
+    ]
   },
   "gallery": {
     "title": "MOMENTS FROM FIGATA",
@@ -76,25 +102,109 @@
     "emailPlaceholder": "Your email",
     "subscribe": "Subscribe",
     "newsletterThanks": "Thank you! Our news is coming soon.",
-    "copyright": "© 2026 Figata Cafe. All rights reserved."
+    "copyright": "© 2026 Figata Cafe. All rights reserved.",
+    "designedBy": "Designed by",
+    "designerName": "Antonis Skarlatos"
   },
   "stubs": {
     "aboutTitle": "Our story",
-    "aboutBody": "Figata Cafe was born in Vyronas from a love of coffee, dried figs, and authentic Greek flavors. Come meet us in person.",
+    "aboutBody": "Figata Cafe is a cozy coffee shop in Vyronas, born from a love of good coffee, natural dried figs, and authentic Greek flavors. Come meet us in person.",
     "menuTitle": "Menu",
     "menuBody": "The full menu is being prepared for the new site. Until then, ask us in the shop — coffee, drinks, figs, and sweets are waiting every day.",
     "productsTitle": "Products",
-    "productsBody": "Wholesale dried figs, specialty coffee, and handmade creations with the aroma of Greek soil.",
+    "productsBody": "Natural dried figs from Taxiarches in Evia, specialty coffee, and handmade creations with the aroma of Greek soil — perfect for everyday enjoyment or gifts.",
     "galleryTitle": "Gallery",
     "galleryBody": "Moments from Figata: the space, the coffee, the figs, and the people who pass through Vyronas.",
-    "contactTitle": "Contact",
-    "contactBody": "Find us at Agias Sofias 128 in Vyronas. Call or drop by for a coffee.",
     "termsTitle": "Terms of use",
-    "termsBody": "This page is temporary. Full terms for figata.gr will be published before the new homepage goes live. The site shares information about Figata Cafe and does not collect newsletter signups yet.",
+    "termsUpdated": "Last updated: October 2026",
+    "termsBody": "Welcome to figata.gr, the official website of Figata Cafe (Agias Sofias 128, Vyronas 16232). By accessing or using this website, you accept these Terms of Use. If you do not agree, please do not use the site.",
+    "termsSections": [
+      {
+        "title": "1. Purpose of the website",
+        "paragraphs": [
+          "This website provides information about Figata Cafe, our products and services (coffee, drinks, dried figs, handmade creations), as well as contact details, opening hours, and location.",
+          "Content is informational and does not constitute a binding offer of sale unless expressly stated otherwise."
+        ]
+      },
+      {
+        "title": "2. Use of the website",
+        "paragraphs": [
+          "You may use the website for personal, non-commercial purposes. Copying, modifying, republishing, or commercially exploiting content without prior written permission from Figata Cafe is not allowed.",
+          "You agree not to use the site in any way that could harm, disrupt, or gain unauthorized access to systems or data."
+        ]
+      },
+      {
+        "title": "3. Intellectual property",
+        "paragraphs": [
+          "All text, photos, logos, graphics, and other material on figata.gr belong to Figata Cafe or their rightful owners and are protected by applicable intellectual property law.",
+          "The name “Figata”, the logo, and related marks are distinctive signs of the business."
+        ]
+      },
+      {
+        "title": "4. Products, prices, and availability",
+        "paragraphs": [
+          "Product descriptions, photos, prices, and availability may change without prior notice. If the website and the physical shop differ, information at the shop prevails.",
+          "Nutrition or origin information is provided in good faith; for allergies or special dietary needs, ask our staff before consuming or purchasing."
+        ]
+      },
+      {
+        "title": "5. Personal data",
+        "paragraphs": [
+          "The website may collect data you provide (for example via a contact form or newsletter signup), as well as technical operating data (such as cookies or logs) where applicable.",
+          "Data is used only for the purposes for which it was given (communication, updates, improving the user experience) and in line with applicable data-protection law (GDPR).",
+          "For requests about your data (access, correction, deletion, or withdrawing newsletter consent), contact us at the shop or via the details listed on the website."
+        ]
+      },
+      {
+        "title": "6. External links",
+        "paragraphs": [
+          "The site may include links to third-party websites (for example maps or social networks). Figata Cafe does not control and is not responsible for third-party content or privacy practices."
+        ]
+      },
+      {
+        "title": "7. Limitation of liability",
+        "paragraphs": [
+          "We take reasonable care to keep information accurate and up to date, but we do not guarantee completeness or uninterrupted availability of the website.",
+          "To the fullest extent permitted by law, Figata Cafe is not liable for direct or indirect damages arising from use of, or inability to use, the website."
+        ]
+      },
+      {
+        "title": "8. Changes",
+        "paragraphs": [
+          "We may update these Terms of Use at any time. The revised version will be published on this page with an updated date. Continued use of the site after changes means you accept them."
+        ]
+      },
+      {
+        "title": "9. Governing law",
+        "paragraphs": [
+          "These Terms are governed by Greek law. Any dispute is subject to the courts of Athens, without prejudice to mandatory consumer-protection rules."
+        ]
+      },
+      {
+        "title": "10. Contact",
+        "paragraphs": [
+          "Questions about these Terms: Figata Cafe, Agias Sofias 128, Vyronas 16232 · tel. +30 21 1217 5717 · figata.gr."
+        ]
+      }
+    ],
     "comingSoon": "Coming soon"
   },
   "meta": {
-    "title": "Figata Cafe — Figs and smiles",
-    "description": "Coffee, dried figs, and authentic flavors in a quiet corner of Vyronas."
+    "title": "Figata Cafe — Good coffee & figs in Vyronas",
+    "description": "A cozy cafe in Vyronas with specialty coffee, natural dried figs, and authentic Greek flavors in a quiet neighborhood corner.",
+    "pages": {
+      "about": {
+        "title": "Our story — Figata Cafe Vyronas",
+        "description": "Meet Figata: a neighborhood cafe in Vyronas with good coffee, natural figs from Evia, and warm hospitality every day."
+      },
+      "products": {
+        "title": "Products — Dried figs & coffee | Figata",
+        "description": "Natural fig products, specialty coffee, and handmade creations from Figata Cafe in Vyronas."
+      },
+      "gallery": {
+        "title": "Gallery — Figata Cafe",
+        "description": "Photos of the space, coffee, and fig products at Figata in Vyronas."
+      }
+    }
   }
 }
