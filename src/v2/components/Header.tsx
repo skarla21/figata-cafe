@@ -121,10 +121,22 @@ export default function Header() {
             <span className="sr-only">
               {open ? t.nav.closeMenu : t.nav.openMenu}
             </span>
-            <span className="flex w-5 flex-col gap-1.5">
-              <span className={`h-px w-full bg-current transition ${open ? "translate-y-1.5 rotate-45" : ""}`} />
-              <span className={`h-px w-full bg-current transition ${open ? "opacity-0" : ""}`} />
-              <span className={`h-px w-full bg-current transition ${open ? "-translate-y-1.5 -rotate-45" : ""}`} />
+            <span className="relative block size-5" aria-hidden>
+              <span
+                className={`absolute inset-x-0 h-px origin-center bg-current transition-[transform,top] ${
+                  open ? "top-[9.5px] rotate-45" : "top-[3px]"
+                }`}
+              />
+              <span
+                className={`absolute inset-x-0 top-[9.5px] h-px bg-current transition-opacity ${
+                  open ? "opacity-0" : ""
+                }`}
+              />
+              <span
+                className={`absolute inset-x-0 h-px origin-center bg-current transition-[transform,top] ${
+                  open ? "top-[9.5px] -rotate-45" : "top-[16px]"
+                }`}
+              />
             </span>
           </button>
         </div>
