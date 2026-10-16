@@ -79,8 +79,8 @@ export default function Visit({ locale }: { locale: string }) {
 
       <div className="relative min-h-[22rem]">
         <Image
-          src={photos.cupHand.src}
-          alt={photos.cupHand.alt[lang]}
+          src={photos.storefront.src}
+          alt={photos.storefront.alt[lang]}
           fill
           sizes="(min-width: 1024px) 50vw, 100vw"
           className="object-cover object-center"

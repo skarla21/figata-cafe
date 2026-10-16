@@ -26,8 +26,8 @@ export default function About({ locale }: { locale: string }) {
       </div>
       <div className="relative min-h-[22rem] lg:min-h-full">
         <Image
-          src={photos.storefront.src}
-          alt={photos.storefront.alt[lang]}
+          src={photos.interior.src}
+          alt={photos.interior.alt[lang]}
           fill
           sizes="(min-width: 1024px) 55vw, 100vw"
           className="object-cover object-center"

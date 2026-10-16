@@ -1,8 +1,8 @@
 import StubPage from "@/v2/components/StubPage";
 import { getV2Messages } from "@/v2/i18n";
-import { galleryPagePhotos } from "@/v2/data/media";
+import { photos } from "@/v2/data/media";
 
-export default async function GalleryPreviewPage({
+export default async function AboutPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
@@ -12,9 +12,9 @@ export default async function GalleryPreviewPage({
   return (
     <StubPage
       locale={locale}
-      title={t.stubs.galleryTitle}
-      body={t.stubs.galleryBody}
-      images={galleryPagePhotos}
+      title={t.stubs.aboutTitle}
+      body={t.stubs.aboutBody}
+      images={[photos.storefront, photos.interior, photos.counter]}
     />
   );
 }

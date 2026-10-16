@@ -8,7 +8,8 @@ import Gallery from "@/components/mainPageSections/Gallery";
 import Contact from "@/components/mainPageSections/Contact";
 import DecorativeBackground from "@/components/DecorativeBackground";
 
-export default async function Home() {
+/** Previous landing page composition — kept for reference, not routed. */
+export default async function OldHomePage() {
   return (
     <main className="relative">
       <Navbar />

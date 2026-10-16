@@ -5,6 +5,20 @@ const nextConfig: NextConfig = {
   images: {
     domains: ["res.cloudinary.com"],
   },
+  redirects: async () => {
+    return [
+      {
+        source: "/:locale/preview",
+        destination: "/:locale",
+        permanent: true,
+      },
+      {
+        source: "/:locale/preview/:path*",
+        destination: "/:locale/:path*",
+        permanent: true,
+      },
+    ];
+  },
   headers: async () => {
     return [
       {

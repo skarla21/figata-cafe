@@ -20,16 +20,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function PreviewLayout({ children, params }: Props) {
+export default async function V2Layout({ children, params }: Props) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 
   return (
-    <div
-      className={`v2 ${v2Display.variable} ${v2Sans.variable}`}
-    >
+    <div className={`v2 ${v2Display.variable} ${v2Sans.variable}`}>
       {children}
     </div>
   );

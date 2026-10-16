@@ -2,7 +2,7 @@ import StubPage from "@/v2/components/StubPage";
 import { getV2Messages } from "@/v2/i18n";
 import { photos } from "@/v2/data/media";
 
-export default async function ProductsPreviewPage({
+export default async function ProductsPage({
   params,
 }: {
   params: Promise<{ locale: string }>;

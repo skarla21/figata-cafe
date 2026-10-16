@@ -1,10 +1,10 @@
 export const v2Routes = {
-  home: "/preview",
-  about: "/preview/about",
-  products: "/preview/products",
-  gallery: "/preview/gallery",
-  contact: "/preview/contact",
-  terms: "/preview/terms",
+  home: "/",
+  about: "/about",
+  products: "/products",
+  gallery: "/gallery",
+  contact: "/contact",
+  terms: "/terms",
 } as const;
 
 export type V2RouteKey = keyof typeof v2Routes;
@@ -19,11 +19,11 @@ export function v2Href(locale: string, path: string) {
     return path;
   }
   const normalized = path.startsWith("/") ? path : `/${path}`;
-  return `/${locale}${normalized}`;
+  return `/${locale}${normalized === "/" ? "" : normalized}`;
 }
 
 export function isV2HomePath(pathname: string) {
-  return pathname === v2Routes.home || pathname === `${v2Routes.home}/`;
+  return pathname === "/" || pathname === "";
 }
 
 export function hashFromHref(href: string) {

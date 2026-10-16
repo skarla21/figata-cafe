@@ -2,7 +2,7 @@ import StubPage from "@/v2/components/StubPage";
 import { getV2Messages, v2Locale } from "@/v2/i18n";
 import { store } from "@/v2/data/store";
 
-export default async function ContactPreviewPage({
+export default async function ContactPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
